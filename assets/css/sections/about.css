@@ -1,0 +1,173 @@
+section.about .title-section,
+section.portfolio .title-section,
+section.contact .title-section {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  height: 100px;
+  margin: auto;
+}
+
+section.about .title-section h1,
+section.portfolio .title-section h1,
+section.contact .title-section h1 {
+  color: #666;
+  font-size: 56px;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  margin: 0;
+  z-index: 2;
+}
+
+section.about .title-section h1 span,
+section.portfolio .title-section h1 span,
+section.contact .title-section h1 span {
+  color: #ffb400;
+}
+
+section.about .title-section .title-bg,
+section.portfolio .title-section .title-bg,
+section.contact .title-section .title-bg {
+  opacity: 0.1;
+  font-size: 110px;
+  letter-spacing: 10px;
+  line-height: .7;
+  text-transform: uppercase;
+  font-weight: 800;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+
+section.about .personal-information .__data h1,
+section.portfolio .personal-information .__data h1,
+section.contact .personal-information .__data h1 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: 'Poppins',sans-serif;
+}
+
+section.about .personal-information .__data p,
+section.portfolio .personal-information .__data p,
+section.contact .personal-information .__data p {
+  font-family: 'Poppins',sans-serif;
+  font-weight: 400;
+}
+
+section.about .personal-information .credentials ._cards a,
+section.portfolio .personal-information .credentials ._cards a,
+section.contact .personal-information .credentials ._cards a {
+  height: 100%;
+  font-size: 1.2rem;
+  border: 1px solid #efefef;
+}
+
+section.about .personal-information .credentials ._cards a dt,
+section.portfolio .personal-information .credentials ._cards a dt,
+section.contact .personal-information .credentials ._cards a dt {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 800;
+  color: #ffb400;
+}
+
+section.about .personal-information .credentials ._cards a dd,
+section.portfolio .personal-information .credentials ._cards a dd,
+section.contact .personal-information .credentials ._cards a dd {
+  font-weight: 300;
+}
+
+section.about .personal-information .credentials ._cards a dd span.sm-line,
+section.portfolio .personal-information .credentials ._cards a dd span.sm-line,
+section.contact .personal-information .credentials ._cards a dd span.sm-line {
+  border: 1px solid #333;
+  width: 30px;
+  margin-right: 20px;
+}
+
+section.about .experience-section .main-heading {
+  text-align: center;
+  font-family: 'Poppins',sans-serif;
+  color: #000;
+  font-size: 2rem;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  margin: 100px 0 35px 0;
+}
+
+section.about .experience-section .col .__heading {
+  text-align: left;
+  font-family: 'Poppins',sans-serif;
+  color: #000;
+  font-size: 2rem;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  margin: 100px 0 35px 0;
+}
+
+section.about .experience-section .col ul li .__description {
+  font-family: 'Poppins',sans-serif;
+  position: relative;
+  padding: 0 20px 0 60px;
+  margin-bottom: 60px;
+}
+
+section.about .experience-section .col ul li .__description::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  bottom: 0;
+  border-left: 1px solid #000;
+}
+
+section.about .experience-section .col ul li .__description .__icon i {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  line-height: 40px;
+  text-align: center;
+  z-index: 1;
+  border-radius: 50%;
+  color: #fff;
+  background: #ffb400;
+}
+
+section.about .experience-section .col ul li .status {
+  background-color: #eee;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  opacity: .8;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
+
+section.about .experience-section .col ul li h1 {
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+section.about .experience-section .col ul li p {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+/*# sourceMappingURL=about.css.map */

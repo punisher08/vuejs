@@ -1,0 +1,161 @@
+section.about,
+section.portfolio,
+section.contact{
+ 
+  .title-section{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      height: 100px;
+      margin: auto;
+      h1{
+          color: #666;
+          font-size: 56px;
+          font-weight: 900!important;
+          text-transform: uppercase;
+          margin: 0;
+          z-index: 2;
+          span{
+              color: #ffb400;
+          }
+      }
+      .title-bg{
+          opacity: 0.1;
+          font-size: 110px;
+          letter-spacing: 10px;
+          line-height: .7;
+          text-transform: uppercase;
+          font-weight: 800;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%,0%);
+      }
+  }
+  .personal-information{
+    .__data{
+        h1{
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            font-weight: 500;
+            font-family: 'Poppins',sans-serif;
+        }
+        p{
+            font-family: 'Poppins',sans-serif;
+            font-weight: 400;
+        }
+
+    }
+    .credentials{
+        ._cards{
+            a{
+                height: 100%;
+                font-size: 1.2rem;
+                // darkmode
+                border: 1px solid #efefef;
+                // border: 1px solid #252525;
+                dt{
+                    margin: 0;
+                    font-size: 50px;
+                    font-weight: 800;
+                    color: #ffb400;
+                }
+                dd{
+                    font-weight: 300;
+                    span.sm-line{
+                        border: 1px solid #333;
+                        width: 30px;
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+  }
+  
+}
+section.about{
+    .experience-section{
+        .main-heading{
+            text-align: center;
+            font-family: 'Poppins',sans-serif;
+            color: #000;
+            font-size: 2rem;
+            font-weight: 900 !important;
+            text-transform: uppercase;
+            margin: 100px 0 35px 0;
+        }
+        .col{
+            .__heading{
+                text-align: left;
+                font-family: 'Poppins',sans-serif;
+                color: #000;
+                font-size: 2rem;
+                font-weight: 900 !important;
+                text-transform: uppercase;
+                margin: 100px 0 35px 0;
+            }
+            ul{
+                li{
+                    // font-family: 'Poppins',sans-serif;
+                    
+                    .__description{
+                        font-family: 'Poppins',sans-serif;
+                        position: relative;
+                        padding: 0 20px 0 60px;
+                        margin-bottom: 60px;
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            top: 20px;
+                            left: 20px;
+                            bottom: 0;
+                            border-left: 1px solid #000;
+                        }
+                        .__icon{
+                            i{
+                                width: 40px;
+                                height: 40px;
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                line-height: 40px;
+                                text-align: center;
+                                z-index: 1;
+                                border-radius: 50%;
+                                color: #fff;
+                                background: #ffb400;
+                            }
+                        }
+                    }
+                    .status{
+                        background-color: #eee;
+                        width: fit-content;
+                        color: #666;
+                        font-size: 12px;
+                        margin-bottom: 12px;
+                        border-radius: 20px;
+                        font-weight: 600;
+                        opacity: .8;
+                        padding: 8px 20px;
+                        text-transform: uppercase;
+                        font-family: sans-serif;
+
+                    }
+                    h1{
+                        margin-top: 20px;
+                        text-transform: uppercase;
+                        font-size: 1.2rem;
+                    }
+                    p{
+                        margin-top: 20px;
+                        font-size: 0.9rem;
+                        color: #666;
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,290 @@
+// Darkmode
+.dark{
+    background: #111;
+    // animation: fade-in 0.3s ease-in;
+    // overflow: hidden;
+    position: absolute;
+    width: 100%;
+    .styled-bg{
+        position: fixed;
+        height: 200%;
+        width: 100%;
+        transform: rotate(-15deg);
+        left: -83%;
+        top: -50%;
+    }
+    .profile{
+        .__image{
+            
+            background-image: url(../images/profileimg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+            // height: 100vh;
+            z-index: 1;
+            border-radius: 30px;
+            z-index: 1;
+            left: 40px;
+            top: 40px;
+            position: relative;
+            max-width: 67%;
+            max-height: 93%;
+            height: calc(100vh - 0px);
+          
+            
+        }
+    }
+    .data{
+        transform: translate(0%,50%);
+        top: 10%;
+        position: absolute;
+        right: 18%;
+        left: 50%;
+        .role{
+            font-size: 51px;
+            line-height: 62px;
+            font-weight: 700;
+            margin: 18px 0 10px;
+            position: relative;
+            color: #ffb400;
+            span{
+                color: #fff;
+            }
+        }
+        .objective{
+            margin: 15px 0 28px;
+            font-size: 16px;
+            line-height: 35px;
+            font-weight: 200;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+        }
+        .bg-yellow{
+            background: #ffb400;
+            color: #fff;
+        }
+        button{
+            color: #fff;
+        }
+    }
+        // sections
+   
+}
+//EO Darkmode
+.navigations {
+    .dark-or-light-mode{
+        border-radius: 50%;
+        background: #333;
+        color: #fff;
+        height: 50px;
+        width: 50px;
+        font-size: 1.8rem;
+    }
+    .nav-menu{
+        display: grid;
+        justify-items: end;
+        .btn-hovered{
+            width: auto;
+            transition-property: width;
+            transition-duration: 0.1s;
+            transition-timing-function: ease-in-out;
+        }
+        .bg-normal{
+            background: #eeeeee;
+            color: #666666;
+            border: 1px solid #eeeeee;
+        }
+        .bg-yellow{
+            background: #ffb400;
+            color: #fff;
+        }
+        .active{
+            background: #ffb400;
+            color: #fff;
+        }
+        li{
+            font-weight: 500;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+            border-radius: 50px;
+            text-transform: uppercase;
+            padding: 20px;
+        
+            // 
+            width: 60px;
+            height: 60px;
+            transition-property: width;
+            transition-duration: 0.1s;
+            transition-timing-function: ease-in;
+            
+            span{
+                padding: 20px;
+                transition: 1s;
+            }
+            i{
+                background: #eeeeee;
+                border-radius: 50%;
+                // padding: 25px;
+            }
+        }
+    }
+}
+// 
+.dark{
+    section.about,
+    section.portfolio{
+        // height: 100vh;
+        // overflow: hidden;
+        .title-section{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            height: 100px;
+            margin: auto;
+            h1{
+                color: #fff;
+                font-size: 56px;
+                font-weight: 900!important;
+                text-transform: uppercase;
+                margin: 0;
+                z-index: 2;
+                span{
+                    color: #ffb400;
+                }
+            }
+            .title-bg{
+                opacity: 0.3;
+                font-size: 110px;
+                letter-spacing: 10px;
+                line-height: .7;
+                text-transform: uppercase;
+                font-weight: 800;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%,0%);
+                color: #fff;
+            }
+        }
+    
+    }
+    .personal-information{
+        .__data{
+            h1{
+              color: #fff;
+              font-weight: 300 !important;
+            }
+            p{
+                color: #fff;
+                font-weight: 300 !important;
+            }
+            button{
+                color: #fff !important;
+            }
+        }
+        .credentials{
+            ._cards{
+                a{
+                    height: 100%;
+                    font-size: 1.2rem;
+                    border: 1px solid #252525 !important;
+                    dt{
+                        margin: 0;
+                        font-size: 50px;
+                        font-weight: 800;
+                        color: #ffb400;
+                    }
+                    dd{
+                        color: #fff !important;
+                        font-weight: 300 !important;
+                        span.sm-line{
+                            border: 1px solid #fff  !important;
+                            width: 30px;
+                            margin-right: 20px;
+                            
+                        }
+                    }
+                }
+            }
+        }
+      }
+}
+// 
+.dark{
+    
+.skills-section{
+    h1{
+        color: #fff !important;
+    }
+    .box{
+      
+        .skill-label{
+          
+            h2{
+               
+                color: #fff  !important;
+            }
+            small{
+               
+                color: #fff  !important;
+            }
+        }
+    }
+}
+}
+
+.dark{
+    section.about{
+        .experience-section{
+            .main-heading{
+              
+                color: #fff;
+              
+            }
+            .col{
+                .__heading{
+                  
+                    color: #fff;
+                 
+                }
+                ul{
+                    li{
+                        // font-family: 'Poppins',sans-serif;
+                        
+                        .__description{
+                          
+                            &::after{
+                            
+                                border-left: 1px solid #fff;
+                            }
+                            .__icon{
+                                i{
+                                   
+                                    color: #fff;
+                                    background: #ffb400;
+                                }
+                            }
+                        }
+                        .status{
+                            background-color: #ffb400;
+                          
+                            color: #fff;
+                       
+    
+                        }
+                        h1{
+                        
+                            color: #fff;
+                        }
+                        p{
+                           
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+    
+        }
+    }
+}

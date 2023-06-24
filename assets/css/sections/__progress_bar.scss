@@ -1,0 +1,61 @@
+
+.skills-section{
+    h1{
+        text-align: center;
+        font-family: 'Poppins',sans-serif;
+        color: #000;
+        font-size: 2rem;
+        font-weight: 900 !important;
+        text-transform: uppercase;
+        margin-top: 100px;
+    }
+    .box{
+        position: relative;
+        margin: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .skill-label{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            color: #000;
+            h2{
+                font-size: 2rem;
+                font-family: 'Poppins',sans-serif;
+                font-weight: 400;
+                color: #000;
+            }
+            small{
+                font-family: 'Poppins',sans-serif;
+                font-weight: 400;
+                color: #000;
+                font-size: 1rem;
+            }
+        }
+    }
+    .circle{
+        width: 120px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // border: 2px solid #0007;
+        .points{
+            width: 3px;
+            height: 15px;
+            border-radius: 3px;
+            background-color: #0007;
+            position: absolute;
+            transform: rotate(calc(var(--i)*var(--rot))) translateY(-100px);
+            // animation:glow 0.04s linear forwards;
+            // animation-delay: calc(var(--i)*0.05s);
+            &.marked{
+                animation:glow 0.04s linear forwards;
+                animation-delay: calc(var(--i)*0.05s);
+            }
+        }
+    }
+}

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhomel Ignacio Vue CV  </title>
+  <link rel="icon" type="image/png" href="assets/images/icon.png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://kit.fontawesome.com/f8208da359.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Poppins:wght@200;500&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/f8208da359.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <div id="app">
+    <div :class="`${darkmode ? 'dark' : 'light'}`">
+      <section class="navigations">
+          <div  @click="Darkmode()" class="fixed top-0 right-10  flex flex-col text-dark p-4 z-20 h-auto min-h-0">
+            <i :class="`fa-regular ${darkmode ? 'fa-lightbulb' : 'fa-moon'} dark-or-light-mode rounded border border-black p-3`"></i>
+            <!-- <i class="fa-solid fa-lightbulb dark-or-light-mode"></i> -->
+          </div>
+          <div class="fixed top-0 right-10 h-full flex flex-col justify-center items-center  text-dark p-4 z-10">
+              <ul class="nav-menu">
+                <li v-for="(item, index) in menuItems" :key="index" @mouseover="Toggle(item,menuItems)" @mouseout="item.hovered = false" :class="`${current_page === item.page ? 'active' : ''} flex items-center justify-center mb-4 ${item.hovered ? 'btn-hovered' : ''} ${item.hovered ? 'bg-yellow' : 'bg-normal'}`"   v-on:click="Page(item)">
+                  <span :class="{ 'show': item.hovered }" class="hidden">{{ item.label }}</span>
+                  <i :class="`fa-solid ${item.icon} fa-lg ${item.hovered ? '' : ''}`"></i>
+                </li>
+              </ul>
+          </div>
+      </section>
+      <!-- Home page -->
+      <transition name="fade">
+        <section :class="`main-page section1  ${current_page === 'home' ? 'fade-upward':''}`" v-if="current_page === 'home'">
+            <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
+                <div class="profile">
+                    <div class="bg-yellow-400 h-screen w-screen fixed transform -rotate-15 -left-4/5 -top-1/2 styled-bg"></div>   
+                    <div class="__image" ></div>               
+                </div>
+                <div class="data">   
+                    <div class="role"><i class="fa-solid fa-minus"></i>I'M JHOMEL <span><br> WEB DEVELOPER </span></div> 
+                    <div class="objective">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus cumque iure officiis adipisci, possimus voluptate placeat odio. Voluptate, doloribus sunt?
+                    </div>     
+                    <button @click="AddModal()" :class="`btn-main flex items-center justify-center  ${btn_toggle ? 'bg-yellow' : ''}`" @mouseover="btn_toggle = true" @mouseout="btn_toggle = false">More about me<i class="fa-sharp fa-solid fa-arrow-right fa-lg "></i></button>    
+                </div>
+            </div>
+            <div id="modal"></div>
+        </section>
+      </transition>
+
+      <transition name="fade">
+        <section :class="`mt-5 container m-auto  about p-5 ${current_page === 'about' ? 'fade-upward':''}`" v-if="current_page === 'about'">
+          <div class="title-section text-left text-sm-center container change-section">
+            <h1>ABOUT <span>ME</span></h1>
+            <span class="title-bg">Resume</span>
+          </div>
+          <div class="grid grid-cols-2 gap-4 pt-5 mt-5 personal-information">
+            <div class="__data">
+                <h1 class="mb-5 pb-5">Personal Information</h1>
+                <div class="grid grid-cols-2 gap-4">
+                  <div v-for="item in personalData" :key="item.label">
+                    <p >{{ item.label }}:
+                    <span class="font-normal">{{ item.value }}</span></p>
+                  </div>
+                </div>
+                <div class="pt-5 mt-5">
+                  <button :class="`btn-main flex items-center justify-center bg-yellow}`">DOWNLOAD CV <i class="fa-solid fa-download"></i></button>    
+                </div>
+            </div>
+            <div class="credentials p-5">
+                <div class="grid grid-cols-2 gap-8 ">
+                  <div class="col _cards" v-for="card in cards">
+                    <a href="#" class="block max-w-sm p-6 bg-transparent border rounded-lg shadow dark:bg-gray-800 dark:border-gray-300 dark:hover:bg-gray-700">
+                      <dt class="mb-2 text-3xl font-extrabold">{{card.experience}}+</dt>
+                      <dd class="pt-5  flex items-center uppercase  "><span class="sm-line"></span>{{card.label1}}<br>{{card.label2}}</dd>
+                    </a>
+                  </div>
+                  <!-- <div class="col _cards">
+                    <a href="#" class="block max-w-sm p-6 bg-transparent border rounded-lg shadow dark:bg-gray-800 dark:border-gray-300 dark:hover:bg-gray-700">
+                      <dt class="mb-2 text-3xl font-extrabold">97+</dt>
+                      <dd class="pt-5  flex items-center uppercase  "><span class="sm-line"></span>Years of<br> experience</dd>
+                    </a>
+                  </div>
+                  <div class="col _cards">
+                    <a href="#" class="block max-w-sm p-6 bg-transparent border rounded-lg shadow dark:bg-gray-800 dark:border-gray-300 dark:hover:bg-gray-700">
+                      <dt class="mb-2 text-3xl font-extrabold">81+</dt>
+                      <dd class="pt-5  flex items-center uppercase  "><span class="sm-line"></span>Years of<br> experience</dd>
+                    </a>
+                  </div>
+                  <div class="col _cards">
+                    <a href="#" class="block max-w-sm p-6 bg-transparent border rounded-lg shadow dark:bg-gray-800 dark:border-gray-300 dark:hover:bg-gray-700">
+                      <dt class="mb-2 text-3xl font-extrabold">51+</dt>
+                      <dd class="pt-5  flex items-center uppercase  "><span class="sm-line"></span>Years of<br> experience</dd>
+                    </a>
+                  </div> -->
+                </div>
+            </div>
+          </div>  
+          <!-- skills -->
+          <div class="skills-section">
+            <h1 class="">MY SKILLS</h1>
+            <div class="grid grid-cols-4 gap-4">
+              <!--  -->
+              <div class="box" v-for="skill in skills">
+                <div class="circle" data-dots="100" :data-percent="skill.rate"></div>
+                <div class="skill-label">
+                  <h2>{{skill.rate}}%</h2>
+                  <small>{{skill.label}}</small>
+                </div>
+              </div>
+              <!--  -->
+            </div>
+          </div>
+          <div class="experience-section">
+            <h1 class="text-center main-heading">EXPERIENCE & EDUCATION</h1>
+            <div class="grid grid-cols-2 gap-8 justify-items-center ">
+              <div class="col">
+                <ul>
+                  <li class="pt-5">
+                    <div class="__description">
+                      <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
+                      <div class="status mr-1 rounded-full">2023 Present</div>
+                      <h1>Lorem, ipsum dolor.</h1>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur.</p>
+                    </div>
+                  </li>
+                  <li class="pt-5">
+                    <div class="__description">
+                      <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
+                      <div class="status mr-1 rounded-full">2023 Present</div>
+                      <h1>Lorem, ipsum dolor.</h1>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur.</p>
+                    </div>
+                  </li>
+                  <li class="pt-5">
+                    <div class="__description">
+                      <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
+                      <div class="status mr-1 rounded-full">2023 Present</div>
+                      <h1>Lorem, ipsum dolor.</h1>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!--  -->
+              <div class="col">
+                <ul>
+                  <li class="pt-5">
+                    <div class="__description">
+                      <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
+                      <div class="status mr-1 rounded-full">2023 Present</div>
+                      <h1>Lorem, ipsum dolor.</h1>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur.</p>
+                    </div>
+                  </li>
+                  <li class="pt-5">
+                    <div class="__description">
+                      <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
+                      <div class="status mr-1 rounded-full">2023 Present</div>
+                      <h1>Lorem, ipsum dolor.</h1>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur.</p>
+                    </div>
+                  </li>
+                  <li class="pt-5">
+                    <div class="__description">
+                      <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
+                      <div class="status mr-1 rounded-full">2023 Present</div>
+                      <h1>Lorem, ipsum dolor.</h1>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </transition>
+      <transition name="fade">
+          <section :class="`pt-5 mt-5 container m-auto portfolio p-5 ${current_page === 'portfolio' ? 'fade-upward':''}`" v-if="current_page === 'portfolio'">
+            <div class="title-section text-left text-sm-center container change-section">
+              <h1>MY <span>PORTFOLIO</span></h1>
+              <span class="title-bg">WORKS</span>
+            </div>
+            <div class="grid grid-cols-3 gap-4 mt-5 gap-3rem">
+              <div class="block rounded-lg  shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700" v-for="(project, index) in projects" :key="index" @mouseover="project.hovered = false" @mouseout="project.hovered = true">
+                  <div :class="`__project ${project.hovered ? '':'bg-yellow-400'}`">
+                      <img :class="`rounded-lg pointer-events-none`" :src="`./assets/images/portfolio/${project.img}`" :alt="`${project.label}`" v-if="project.hovered === true" />
+                      <h1 :class="`${project.hovered ? 'hidden':''}`">{{project.label}}</h1>
+                  </div>
+              </div>
+            </div>    
+          </section>
+      </transition>
+      <!-- contact -->
+      <transition name="fade">
+          <section :class="`pt-5 mt-5 container m-auto contact p-5 ${current_page === 'contact' ? 'fade-upward':''}`" v-if="current_page === 'contact'">
+            <div class="title-section text-left text-sm-center container change-section">
+              <h1>GET IN <span>TOUCH</span></h1>
+              <span class="title-bg">CONTACT</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3">
+              <div class="col-span-1 md:col-span-1 lg:col-span-1">First column (30%)</div>
+              <div class="col-span-1 md:col-span-2 lg:col-span-2">Second column (70%)</div>
+            </div>  
+          </section>
+      </transition>
+        <!-- modal -->
+      <transition v-if="modal">
+        <div id="modal1">
+        <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+          <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+              <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full w-80">
+                <!-- <div class="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"> -->
+                  <button type="button" class=" absolute top-5 right-5 inline-flex w-full justify-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm  sm:ml-3 sm:w-auto" @click="RemoveModal()"><i class="fa-sharp fa-solid fa-xmark fa-lg" style="color:#333;"></i></button>
+                <!-- </div> -->
+                <div class="bg-white" >
+                  <iframe src="aboutme.html" width="100%" height="700px"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </transition>
+    </div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data:{
+        modal:false,
+        current_page:'portfolio',
+        menuItems: [
+            { label: 'Home',icon:'fa-house-user',hovered: false ,active:true  ,page:'home'},
+            { label: 'About',icon:'fa-user',hovered: false ,active:false ,page:'about' },
+            { label: 'Portfolio',icon:'fa-briefcase',hovered: false ,active:false ,page:'portfolio' },
+            { label: 'Contact',icon:'fa-envelope-open',hovered: false ,active:false ,page:'contact'},
+            { label: 'Blog',icon:'fa-newspaper' ,hovered: false ,active:false ,page:'blog'},
+          ],
+          personalData: [
+            { label: 'First Name', value: 'Jhomel' },
+            { label: 'Last Name', value: 'Ignacio' },
+            { label: 'Age', value: '27' },
+            { label: 'Gender', value: 'Male' },
+            { label: 'Nationality', value: 'Filipino' },
+            { label: 'Address', value: 'Barangay Care Tarlac City' },
+            { label: 'Phone', value: '+639 012 379 2789' },
+            { label: 'Email', value: 'jhomignacio05@gmail.com' },
+            { label: 'Skype', value: 'live:.cid.bdc98ed4ff57a19a' },
+            { label: 'Languages', value: 'English, Filipino' },
+          ],
+          skills:[
+            {label:'HTML',rate:'80'},
+            {label:'CSS',rate:'80'},
+            {label:'PHP',rate:'70'},
+            {label:'JAVASCRIPT',rate:'70'},
+            {label:'WORDPRESS',rate:'80'},
+            {label:'LARAVEL',rate:'70'},
+            {label:'VUEJS',rate:'70'},
+            {label:'SHOPIFY',rate:'70'},
+          ],
+          cards:[
+            {label1:'Years', label2:'of Experience',experience:'3'},
+            {label1:'Completed', label2:'Projects',experience:'80'},
+            {label1:'Happy', label2:'Customers',experience:'5'},
+            {label1:'Awards', label2:'Won',experience:'2'},
+          
+          ],
+          projects:[
+            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
+            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
+            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
+            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
+            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
+            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
+            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
+            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
+            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
+
+          ],
+          hoveredIndex: null,
+          isHovered: false,
+          btn_toggle:false,
+          darkmode:false,
+          progressbarCalled:false,
+      },
+      computed:{
+       
+      },
+      methods:{
+        Toggle(item,menuItems){
+          item.hovered = true;
+        },
+        ToggleProjects(project){
+          project.hovered = false;
+        },
+        Darkmode(){
+          this.darkmode = !this.darkmode;
+        },
+        async Page(item){
+         this.current_page = item.page;
+         var data = await this.UpdateprogressbarState();
+         
+         if(item.page === 'about' && data === true){
+            this.Progressbar();
+         }
+        },
+        async UpdateprogressbarState(){
+          if(this.current_page === 'about'){
+            this.progressbarCalled = true;
+          }else{
+            this.progressbarCalled = false;
+          }
+          return this.progressbarCalled;
+        },
+        RemoveModal(){
+          this.modal = false;
+        },
+        AddModal(){
+          this.modal = true;
+          // fetch('aboutme.html')
+          // .then(response => response.text())
+          // .then(data => {
+          //   // Update the content of the specified element with the retrieved data
+          //   document.getElementById('modal-about').innerHTML = '';
+          //   document.getElementById('modal-about').innerHTML = data;
+          //   console.log(data);
+          // })
+          // .catch(error => console.log(error));
+        },
+        Progressbar(){
+          const circles = document.querySelectorAll('.circle');
+          circles.forEach(elem => {
+          var dots = elem.getAttribute('data-dots');
+          var marked = elem.getAttribute('data-percent');
+          var percent = Math.floor(dots*marked/100);
+          var rotate = 360/dots;
+          var points = "";
+          for (let i = 0; i < dots; i++) {
+            points += `<div class="points" style="--i:${i}; --rot: ${rotate}deg;"></div>`;
+          }
+          elem.innerHTML = points;
+
+          const pointsmarked = elem.querySelectorAll('.points');
+          for (let i = 0; i < percent; i++) {
+              pointsmarked[i].classList.add('marked');
+          }
+        });
+        }
+      },
+      mounted(){
+        this.Progressbar();
+      },
+      updated(){
+        // console.log(this.UpdateprogressbarState());
+        // this.Progressbar();
+        // this.progressbarCalled  
+        // this.cancel();
+      },
+    });
+  </script>
+</body>
+</html>
