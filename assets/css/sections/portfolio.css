@@ -9,6 +9,14 @@ section.portfolio .gap-3rem .__project {
   border-radius: 15px;
   -webkit-transition-duration: 1.5s;
           transition-duration: 1.5s;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+@media screen and (max-width: 1024px) {
+  section.portfolio .gap-3rem .__project {
+    height: auto !important;
+  }
 }
 
 section.portfolio .gap-3rem .__project h1 {
@@ -23,5 +31,12 @@ section.portfolio .gap-3rem .__project h1 {
   text-transform: uppercase;
   color: #fff;
   font-size: 1.5rem;
+  text-align: center;
+}
+
+section.portfolio .gap-3rem .__project img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=portfolio.css.map */

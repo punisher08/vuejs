@@ -18,11 +18,11 @@
   <div id="app">
     <div :class="`${darkmode ? 'dark' : 'light'}`">
       <section class="navigations">
-          <div  @click="Darkmode()" class="fixed top-0 right-10  flex flex-col text-dark p-4 z-20 h-auto min-h-0">
+          <div  @click="Darkmode()" class="fixed top-0 right-10 md:right-0  flex flex-col text-dark p-4 z-20 h-auto min-h-0">
             <i :class="`fa-regular ${darkmode ? 'fa-lightbulb' : 'fa-moon'} dark-or-light-mode rounded border border-black p-3`"></i>
             <!-- <i class="fa-solid fa-lightbulb dark-or-light-mode"></i> -->
           </div>
-          <div class="fixed top-0 right-10 h-full flex flex-col justify-center items-center  text-dark p-4 z-10">
+          <div class="fixed top-0 right-10 md:right-0  h-full flex flex-col justify-center items-center  text-dark p-4 z-10">
               <ul class="nav-menu">
                 <li v-for="(item, index) in menuItems" :key="index" @mouseover="Toggle(item,menuItems)" @mouseout="item.hovered = false" :class="`${current_page === item.page ? 'active' : ''} flex items-center justify-center mb-4 ${item.hovered ? 'btn-hovered' : ''} ${item.hovered ? 'bg-yellow' : 'bg-normal'}`"   v-on:click="Page(item)">
                   <span :class="{ 'show': item.hovered }" class="hidden">{{ item.label }}</span>
@@ -33,16 +33,17 @@
       </section>
       <!-- Home page -->
       <transition name="fade">
-        <section :class="`main-page section1  ${current_page === 'home' ? 'fade-upward':''}`" v-if="current_page === 'home'">
+        <section :class="`main-page section1 container ${current_page === 'home' ? 'fade-upward':''}`" v-if="current_page === 'home'">
             <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
-                <div class="profile">
+                <div class="profile  lg:block">
                     <div class="bg-yellow-400 h-screen w-screen fixed transform -rotate-15 -left-4/5 -top-1/2 styled-bg"></div>   
-                    <div class="__image" ></div>               
+                    <div class="__image" ></div>  
+                    <img src="assets/images/profile.jpg" alt="" class="profile-md hidden">             
                 </div>
                 <div class="data">   
-                    <div class="role"><i class="fa-solid fa-minus"></i>I'M JHOMEL <span><br> WEB DEVELOPER </span></div> 
+                    <div class="role"><i class="fa-solid fa-minus"></i>I'M JHOMEL <span><br> FULL STACK WEB DEVELOPER </span></div> 
                     <div class="objective">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus cumque iure officiis adipisci, possimus voluptate placeat odio. Voluptate, doloribus sunt?
+                      I am a skilled Filipino web developer with a strong passion for crafting efficient web applications. My goal is to create user-friendly solutions that streamline and automate tasks, enhancing productivity and convenience.
                     </div>     
                     <button @click="AddModal()" :class="`btn-main flex items-center justify-center  ${btn_toggle ? 'bg-yellow' : ''}`" @mouseover="btn_toggle = true" @mouseout="btn_toggle = false">More about me<i class="fa-sharp fa-solid fa-arrow-right fa-lg "></i></button>    
                 </div>
@@ -57,10 +58,10 @@
             <h1>ABOUT <span>ME</span></h1>
             <span class="title-bg">Resume</span>
           </div>
-          <div class="grid grid-cols-2 gap-4 pt-5 mt-5 personal-information">
+          <div class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-4 lg:pt-5 lg:mt-5 personal-information">
             <div class="__data">
                 <h1 class="mb-5 pb-5">Personal Information</h1>
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
                   <div v-for="item in personalData" :key="item.label">
                     <p >{{ item.label }}:
                     <span class="font-normal">{{ item.value }}</span></p>
@@ -71,38 +72,20 @@
                 </div>
             </div>
             <div class="credentials p-5">
-                <div class="grid grid-cols-2 gap-8 ">
+                <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-8 ">
                   <div class="col _cards" v-for="card in cards">
                     <a href="#" class="block max-w-sm p-6 bg-transparent border rounded-lg shadow dark:bg-gray-800 dark:border-gray-300 dark:hover:bg-gray-700">
                       <dt class="mb-2 text-3xl font-extrabold">{{card.experience}}+</dt>
                       <dd class="pt-5  flex items-center uppercase  "><span class="sm-line"></span>{{card.label1}}<br>{{card.label2}}</dd>
                     </a>
                   </div>
-                  <!-- <div class="col _cards">
-                    <a href="#" class="block max-w-sm p-6 bg-transparent border rounded-lg shadow dark:bg-gray-800 dark:border-gray-300 dark:hover:bg-gray-700">
-                      <dt class="mb-2 text-3xl font-extrabold">97+</dt>
-                      <dd class="pt-5  flex items-center uppercase  "><span class="sm-line"></span>Years of<br> experience</dd>
-                    </a>
-                  </div>
-                  <div class="col _cards">
-                    <a href="#" class="block max-w-sm p-6 bg-transparent border rounded-lg shadow dark:bg-gray-800 dark:border-gray-300 dark:hover:bg-gray-700">
-                      <dt class="mb-2 text-3xl font-extrabold">81+</dt>
-                      <dd class="pt-5  flex items-center uppercase  "><span class="sm-line"></span>Years of<br> experience</dd>
-                    </a>
-                  </div>
-                  <div class="col _cards">
-                    <a href="#" class="block max-w-sm p-6 bg-transparent border rounded-lg shadow dark:bg-gray-800 dark:border-gray-300 dark:hover:bg-gray-700">
-                      <dt class="mb-2 text-3xl font-extrabold">51+</dt>
-                      <dd class="pt-5  flex items-center uppercase  "><span class="sm-line"></span>Years of<br> experience</dd>
-                    </a>
-                  </div> -->
                 </div>
             </div>
           </div>  
           <!-- skills -->
           <div class="skills-section">
             <h1 class="">MY SKILLS</h1>
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4">
               <!--  -->
               <div class="box" v-for="skill in skills">
                 <div class="circle" data-dots="100" :data-percent="skill.rate"></div>
@@ -116,31 +99,37 @@
           </div>
           <div class="experience-section">
             <h1 class="text-center main-heading">EXPERIENCE & EDUCATION</h1>
-            <div class="grid grid-cols-2 gap-8 justify-items-center ">
+            <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-8 justify-items-center ">
               <div class="col">
                 <ul>
                   <li class="pt-5">
                     <div class="__description">
                       <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
-                      <div class="status mr-1 rounded-full">2023 Present</div>
-                      <h1>Lorem, ipsum dolor.</h1>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur.</p>
+                      <div class="status mr-1 rounded-full">September 2022 to Present 2023</div>
+                      <h1>Netseek Pty LTD / WordPress Developer</h1>
+                      <p>Create and Develop WordPress Websites from scratch.</p>
+                      <p>Developed WP Comparison Plugin.</p>
+                      <p>Zapier and OPENAI Integration.</p>
+                  </li>
+                  <li class="pt-5">
+                    <div class="__description">
+                      <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
+                      <div class="status mr-1 rounded-full">March 2023 - September 2023</div>
+                      <h1>Purplebug Inc. - WordPress Developer / WordPress Consultant</h1>
+                      <p>Create and Develop WordPress Websites from scratch.</p>
+                      <p>Create and Develop WordPress Plugins. Google Analytic Plugin , WP Admin Template and Elementor Widgets.</p>
+                      <p>Create and Develop WordPress Themes and  WP Templates.</p>
+                      <p>Manage server configuration to maintain and improve website speed.</p>
                     </div>
                   </li>
                   <li class="pt-5">
                     <div class="__description">
                       <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
-                      <div class="status mr-1 rounded-full">2023 Present</div>
-                      <h1>Lorem, ipsum dolor.</h1>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur.</p>
-                    </div>
-                  </li>
-                  <li class="pt-5">
-                    <div class="__description">
-                      <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
-                      <div class="status mr-1 rounded-full">2023 Present</div>
-                      <h1>Lorem, ipsum dolor.</h1>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur.</p>
+                      <div class="status mr-1 rounded-full">July 2020 - October 2021</div>
+                      <h1>IFORMAT LOGIC</h1>
+                      <p>Create and Develop WordPress Websites from scratch.</p>
+                      <p>Create and Develop Shopify Websites from scratch.</p>
+                      <p>Create and Develop Larvel Websites from scratch.</p>
                     </div>
                   </li>
                 </ul>
@@ -151,25 +140,20 @@
                   <li class="pt-5">
                     <div class="__description">
                       <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
-                      <div class="status mr-1 rounded-full">2023 Present</div>
-                      <h1>Lorem, ipsum dolor.</h1>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur.</p>
+                      <div class="status mr-1 rounded-full">August 2015 - June 2019</div>
+                      <h1>TERTIARY</h1>
+                      <h1>Tarlac State University</h1>
+                      <p>BS in Information Technology major in Web & Mobile Applications</p>
+                      <p>Address: Romulo Boulevard, San Vicente, Tarlac City, Tarlac, 2300, Philippines</p>
                     </div>
                   </li>
                   <li class="pt-5">
                     <div class="__description">
                       <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
-                      <div class="status mr-1 rounded-full">2023 Present</div>
-                      <h1>Lorem, ipsum dolor.</h1>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur.</p>
-                    </div>
-                  </li>
-                  <li class="pt-5">
-                    <div class="__description">
-                      <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
-                      <div class="status mr-1 rounded-full">2023 Present</div>
-                      <h1>Lorem, ipsum dolor.</h1>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur.</p>
+                      <div class="status mr-1 rounded-full">2008 - 2012</div>
+                      <h1>SECONDARY</h1>
+                      <h1>MALIWALO NATIONAL HIGH SCHOOL ANNEX</h1>
+                      <p>Address: Tibag Tarlac City, Tarlac</p>
                     </div>
                   </li>
                 </ul>
@@ -184,9 +168,9 @@
               <h1>MY <span>PORTFOLIO</span></h1>
               <span class="title-bg">WORKS</span>
             </div>
-            <div class="grid grid-cols-3 gap-4 mt-5 gap-3rem">
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-4 mt-5 gap-3rem">
               <div class="block rounded-lg  shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700" v-for="(project, index) in projects" :key="index" @mouseover="project.hovered = false" @mouseout="project.hovered = true">
-                  <div :class="`__project ${project.hovered ? '':'bg-yellow-400'}`">
+                  <div :class="`__project ${project.hovered ? '':'bg-yellow-400'}`" @click="projectModal(project)">
                       <img :class="`rounded-lg pointer-events-none`" :src="`./assets/images/portfolio/${project.img}`" :alt="`${project.label}`" v-if="project.hovered === true" />
                       <h1 :class="`${project.hovered ? 'hidden':''}`">{{project.label}}</h1>
                   </div>
@@ -208,7 +192,7 @@
           </section>
       </transition>
         <!-- modal -->
-      <transition v-if="modal">
+      <transition v-if="modal_aboutme">
         <div id="modal1">
         <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
           <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
@@ -227,6 +211,36 @@
         </div>
         </div>
       </transition>
+      <transition v-if="modal_portfolio">
+        <div id="modal_portfolio">
+        <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+          <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+              <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full w-80">
+                <!-- <div class="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"> -->
+                  <button type="button" class=" absolute top-5 right-5 inline-flex w-full justify-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm  sm:ml-3 sm:w-auto" @click="CloseprojectModal()"><i class="fa-sharp fa-solid fa-xmark fa-lg" style="color:#333;"></i></button>
+                <!-- </div> -->
+                <div class="bg-white" >
+                  <div class="title p-5">{{active_project.label}}</div>
+                  <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-5 gap-3rem p-5">
+                      <div class="col">
+                        <p><i class="fa-solid fa-file-lines"></i>Framework : {{active_project.framework}}</p>
+                        <p><i class="fa-solid fa-code"></i>Languages : {{active_project.language}}</p>
+                      </div>
+                      <div class="col">
+                        <p> <i class="fa-solid fa-user"></i>Company: {{active_project.client}}</p>
+                        <p> <i class="fa-solid fa-link"></i>Preview<a :href="`${active_project.url}`" target="_blank">:{{active_project.url}}</a></p>
+                      </div>
+                  </div>
+                  <img :src="`assets/images/portfolio/${active_project.img}`" alt="" class="p-5">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </transition>
     </div>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
@@ -234,8 +248,10 @@
     new Vue({
       el: '#app',
       data:{
-        modal:false,
-        current_page:'portfolio',
+        modal_aboutme:false,
+        modal_portfolio:false,
+        active_project:[],
+        current_page:'about',
         menuItems: [
             { label: 'Home',icon:'fa-house-user',hovered: false ,active:true  ,page:'home'},
             { label: 'About',icon:'fa-user',hovered: false ,active:false ,page:'about' },
@@ -250,7 +266,7 @@
             { label: 'Gender', value: 'Male' },
             { label: 'Nationality', value: 'Filipino' },
             { label: 'Address', value: 'Barangay Care Tarlac City' },
-            { label: 'Phone', value: '+639 012 379 2789' },
+            { label: 'Phone', value: '+63935 298 9795' },
             { label: 'Email', value: 'jhomignacio05@gmail.com' },
             { label: 'Skype', value: 'live:.cid.bdc98ed4ff57a19a' },
             { label: 'Languages', value: 'English, Filipino' },
@@ -267,22 +283,21 @@
           ],
           cards:[
             {label1:'Years', label2:'of Experience',experience:'3'},
-            {label1:'Completed', label2:'Projects',experience:'80'},
-            {label1:'Happy', label2:'Customers',experience:'5'},
-            {label1:'Awards', label2:'Won',experience:'2'},
+            {label1:'Frameworks', label2:'Used',experience:'4'},
+            {label1:'Projects', label2:'Created',experience:'9'},
+            {label1:'Company', label2:'Served',experience:'2'},
           
           ],
           projects:[
-            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
-            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
-            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
-            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
-            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
-            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
-            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
-            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
-            {label:'VUEJS RESUME', url:'http://localhost/vuej-cv/index.html',img:'project1.jpg',hovered:true},
-
+            {label:'WordPress Comparison Plugin', url:'https://wpcomparisonplugin.com',framework:'WordPress',language:'Php , Css , Jquery ,Zapier, OPENAI', client:'Netseek',img:'wpcomparison.png',hovered:true},
+            {label:'Tea & Coffee Depot', url:'https://teaandcoffeedepot.myshopify.com',framework:'Shopify',language:'liquid ,Php , Css , Jquery', client:'Purplebug Inc.',img:'tnc.png',hovered:true},
+            {label:'Super MPower', url:'https://supermpower.com',framework:'Laravel',language:'Php , Css , Jquery , REST API ', client:'Super M Power.',img:'mpower.png',hovered:true},
+            {label:'Pinoybuilders', url:'https://pinoybuilders.ph',framework:'WordPress',language:'Php , Css , Jquery , REST API , VueJS', client:'Purplebug Inc.',img:'pinoybuilders.png',hovered:true},
+            {label:'Lead Origin', url:'https://leadorigin.com',framework:'WordPress',language:'Php , Css , Jquery ', client:'IFormat Logic',img:'leadorigin.png',hovered:true},
+            {label:'Libby Banks', url:'https://libbybanks.com',framework:'WordPress',language:'Php , Css , Jquery ', client:'IFormat Logic',img:'libbybanks.png',hovered:true},
+            {label:'Mirex Marketing', url:'https://www.mirexmarketing.com',framework:'WordPress',language:'Php , Css , Jquery ', client:'IFormat Logic',img:'mirex.png',hovered:true},
+            {label:'Southern Crossings', url:'https://southern-crossings.com',framework:'WordPress',language:'Php , Css , Jquery ', client:'Netseek',img:'sc.png',hovered:true},
+            {label:'Angel Lucci', url:'https://angeluccijewelry.com',framework:'Shopify',language:'Liquid, Php , Css , Jquery , VueJS', client:'IFormat Logic',img:'angelluccy.png',hovered:true},
           ],
           hoveredIndex: null,
           isHovered: false,
@@ -294,6 +309,13 @@
        
       },
       methods:{
+        projectModal(project){
+          this.modal_portfolio = true;
+          this.active_project = project;
+        },
+        CloseprojectModal(){
+          this.modal_portfolio = false;
+        },
         Toggle(item,menuItems){
           item.hovered = true;
         },
@@ -320,19 +342,11 @@
           return this.progressbarCalled;
         },
         RemoveModal(){
-          this.modal = false;
+          this.modal_aboutme = false;
         },
         AddModal(){
-          this.modal = true;
-          // fetch('aboutme.html')
-          // .then(response => response.text())
-          // .then(data => {
-          //   // Update the content of the specified element with the retrieved data
-          //   document.getElementById('modal-about').innerHTML = '';
-          //   document.getElementById('modal-about').innerHTML = data;
-          //   console.log(data);
-          // })
-          // .catch(error => console.log(error));
+          this.modal_aboutme = true;
+          
         },
         Progressbar(){
           const circles = document.querySelectorAll('.circle');

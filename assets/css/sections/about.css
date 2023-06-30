@@ -24,6 +24,15 @@ section.contact .title-section h1 {
   z-index: 2;
 }
 
+@media screen and (max-width: 768px) {
+  section.about .title-section h1,
+  section.portfolio .title-section h1,
+  section.contact .title-section h1 {
+    font-size: 2rem;
+    line-height: 2rem  !important;
+  }
+}
+
 section.about .title-section h1 span,
 section.portfolio .title-section h1 span,
 section.contact .title-section h1 span {
@@ -44,6 +53,14 @@ section.contact .title-section .title-bg {
   left: 50%;
   -webkit-transform: translate(-50%, 0%);
           transform: translate(-50%, 0%);
+}
+
+@media screen and (max-width: 768px) {
+  section.about .title-section .title-bg,
+  section.portfolio .title-section .title-bg,
+  section.contact .title-section .title-bg {
+    font-size: 3rem;
+  }
 }
 
 section.about .personal-information .__data h1,
@@ -169,5 +186,6 @@ section.about .experience-section .col ul li p {
   margin-top: 20px;
   font-size: 0.9rem;
   color: #666;
+  font-weight: 300;
 }
 /*# sourceMappingURL=about.css.map */

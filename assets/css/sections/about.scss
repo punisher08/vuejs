@@ -16,6 +16,10 @@ section.contact{
           text-transform: uppercase;
           margin: 0;
           z-index: 2;
+          @media screen and ( max-width:768px) {
+            font-size: 2rem;
+            line-height: 2rem  !important;
+          }
           span{
               color: #ffb400;
           }
@@ -31,6 +35,10 @@ section.contact{
           top: 0;
           left: 50%;
           transform: translate(-50%,0%);
+          @media screen and ( max-width:768px) {
+            font-size: 3rem;
+     
+          }
       }
   }
   .personal-information{
@@ -152,6 +160,7 @@ section.about{
                         margin-top: 20px;
                         font-size: 0.9rem;
                         color: #666;
+                        font-weight: 300;
                     }
                 }
             }

@@ -54,9 +54,23 @@ $icon_light:#000;
         transform: rotate(-15deg);
         left: -83%;
         top: -50%;
+        @media screen and (max-width:768px) {
+          display: none;
+        }
 
     }
     .profile{
+      .profile-md {
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+        margin: auto;
+        object-fit: cover;
+        margin-top: 50px;
+        @media screen and (max-width:768px) {
+          display: block;
+        }
+      }
         .__image{
             
             background-image: url(../images/profileimg.jpg);
@@ -72,6 +86,9 @@ $icon_light:#000;
             position: relative;
             max-width: 67%;
             max-height: 93%;
+            @media screen and (max-width:768px) {
+              display: none;
+            }
             
         }
     }
@@ -81,6 +98,14 @@ $icon_light:#000;
         position: absolute;
         right: 18%;
         left: 50%;
+        @media screen and(max-width:768px) {
+          position: relative;
+          left: 15px;
+          top: 0;
+          bottom: 0;
+          transform: translate(0);
+          margin-bottom: 100px;
+        }
         .role{
             font-size: 3rem;
             line-height: 62px;
@@ -90,6 +115,14 @@ $icon_light:#000;
             color: #ffb400;
             span{
                 color: #666;
+                font-size: 2rem;
+                @media screen and(max-width:768px) {
+                  font-size: 1.2rem;
+                }
+            }
+            @media screen and(max-width:768px) {
+              font-size: 2rem;
+              line-height: 32px;
             }
         }
         .objective{
@@ -117,6 +150,13 @@ $icon_light:#000;
     .nav-menu{
         display: grid;
         justify-items: end;
+        @media screen and (max-width:768px) {
+          display: flex !important;
+          bottom: 0;
+          position: absolute;
+          right: 0;
+          transform: translate(5%);
+        }
         .btn-hovered{
             width: auto;
             // transition-property: width;
@@ -144,6 +184,7 @@ $icon_light:#000;
             border-radius: 50px;
             text-transform: uppercase;
             padding: 20px;
+
         
             // 
             width: 60px;
@@ -151,10 +192,19 @@ $icon_light:#000;
             transition-property: width;
             transition-duration: 0.1s;
             transition-timing-function: ease-in;
+              @media screen and (max-width:768px) {
+                margin: 10px;
+                width: 45px !important;
+                height: 45px !important;
+              }
             
             span{
                 padding: 20px;
                 transition: 1s;
+                @media screen and (max-width:768px) {
+                  display: none !important;
+                  visibility: hidden;
+                }
             }
             i{
                 background: #eeeeee;
@@ -246,4 +296,38 @@ body {
   body::-webkit-scrollbar-thumb {
     background-color: transparent;
   }
-  
+  #modal_portfolio{
+    .w-80{
+      width: 50%;
+      max-width: 50%;
+    }
+    .title{
+      text-transform: uppercase;
+      padding: 10px 0 20px;
+      font-weight: 700;
+      text-align: center;
+      font-size: 3rem;
+      color: #ffb400;
+      font-family: 'Poppins', sans-serif;
+      text-transform: uppercase;
+    
+
+    }
+    p{
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      gap: 5px;
+      font-size: 0.9rem;
+      a{
+        text-decoration: underline;
+        color: #ffb400;
+      }
+    }
+    img{
+
+      width: 100%;
+    }
+    i{
+      padding-right:15px;
+    }
+  }
