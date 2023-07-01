@@ -47,6 +47,7 @@ $icon_light:#000;
 .section1{
    
     overflow: hidden;
+
     .styled-bg{
         position: fixed;
         height: 200%;
@@ -69,6 +70,8 @@ $icon_light:#000;
         margin-top: 50px;
         @media screen and (max-width:768px) {
           display: block;
+          object-fit: cover;
+          object-position: top;
         }
       }
         .__image{
@@ -131,6 +134,10 @@ $icon_light:#000;
             line-height: 35px;
             font-weight: 200;
             font-family: 'Poppins', sans-serif;
+            @media screen and(max-width:768px) {
+              font-size: 14px;
+              padding: 10px;
+            }
         }
         .bg-yellow{
             background: #ffb400;
@@ -155,7 +162,17 @@ $icon_light:#000;
           bottom: 0;
           position: absolute;
           right: 0;
-          transform: translate(5%);
+
+          transform: translate(-10%);
+        }
+        @media screen and (min-width:768px )and ( max-width:1024px) {
+
+          display: flex !important;
+          bottom: 50px;
+          position: absolute;
+          right: 50%;
+          -webkit-transform: translate(5%);
+          transform: translate(-50%,50%);
         }
         .btn-hovered{
             width: auto;
@@ -168,6 +185,10 @@ $icon_light:#000;
             background: #eeeeee;
             color: #666666;
             border: 1px solid #eeeeee;
+            @media screen and (min-width:768px )and ( max-width:1024px) {
+
+              margin-right: 20px;
+            }
         }
         .bg-yellow{
             background: #ffb400;
@@ -270,6 +291,7 @@ $icon_light:#000;
 @import './sections/about.scss';
 @import './sections/portfolio.scss';
 @import './sections/animations.scss';
+@import './sections/contact.scss';
 @import './sections/__progress_bar.scss';
 
 #modal1{
@@ -297,9 +319,18 @@ body {
     background-color: transparent;
   }
   #modal_portfolio{
+    .col{
+      width: 100%;
+      overflow: hidden;
+    }
     .w-80{
       width: 50%;
       max-width: 50%;
+      @media screen and(max-width:768px) {
+        width: 90%;
+        max-width: 90%;
+      }
+
     }
     .title{
       text-transform: uppercase;
@@ -310,9 +341,14 @@ body {
       color: #ffb400;
       font-family: 'Poppins', sans-serif;
       text-transform: uppercase;
+      @media screen and(max-width:768px) {
+        font-size: 1.5rem;
+        padding: 10px;
+      }
     
 
     }
+ 
     p{
       font-family: 'Poppins', sans-serif;
       display: flex;
@@ -331,3 +367,20 @@ body {
       padding-right:15px;
     }
   }
+
+  #dl{
+    @media screen and(max-width:768px) {
+      // position: absolute;
+      right: 0;
+    }
+  }
+#project-modal{
+  @media screen and(max-width:768px) {
+    align-items: center;
+  }
+  button{
+    margin: 0;
+    padding: 0;
+    transform: translate(50%,0%);
+  }
+}

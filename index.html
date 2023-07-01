@@ -18,7 +18,7 @@
   <div id="app">
     <div :class="`${darkmode ? 'dark' : 'light'}`">
       <section class="navigations">
-          <div  @click="Darkmode()" class="fixed top-0 right-10 md:right-0  flex flex-col text-dark p-4 z-20 h-auto min-h-0">
+          <div  @click="Darkmode()" class="fixed top-0 right-10 md:right-0  flex flex-col text-dark p-4 z-20 h-auto min-h-0" id="dl">
             <i :class="`fa-regular ${darkmode ? 'fa-lightbulb' : 'fa-moon'} dark-or-light-mode rounded border border-black p-3`"></i>
             <!-- <i class="fa-solid fa-lightbulb dark-or-light-mode"></i> -->
           </div>
@@ -38,7 +38,7 @@
                 <div class="profile  lg:block">
                     <div class="bg-yellow-400 h-screen w-screen fixed transform -rotate-15 -left-4/5 -top-1/2 styled-bg"></div>   
                     <div class="__image" ></div>  
-                    <img src="assets/images/profile.jpg" alt="" class="profile-md hidden">             
+                    <img src="assets/images/profileimg.jpg" alt="" class="profile-md hidden">             
                 </div>
                 <div class="data">   
                     <div class="role"><i class="fa-solid fa-minus"></i>I'M JHOMEL <span><br> FULL STACK WEB DEVELOPER </span></div> 
@@ -109,6 +109,7 @@
                       <h1>Netseek Pty LTD / WordPress Developer</h1>
                       <p>Create and Develop WordPress Websites from scratch.</p>
                       <p>Developed WP Comparison Plugin.</p>
+                      <p>Create and develop WP Plugins.</p>
                       <p>Zapier and OPENAI Integration.</p>
                   </li>
                   <li class="pt-5">
@@ -117,6 +118,7 @@
                       <div class="status mr-1 rounded-full">March 2023 - September 2023</div>
                       <h1>Purplebug Inc. - WordPress Developer / WordPress Consultant</h1>
                       <p>Create and Develop WordPress Websites from scratch.</p>
+                      <p>Create and Develop Shopify Websites from scratch.</p>
                       <p>Create and Develop WordPress Plugins. Google Analytic Plugin , WP Admin Template and Elementor Widgets.</p>
                       <p>Create and Develop WordPress Themes and  WP Templates.</p>
                       <p>Manage server configuration to maintain and improve website speed.</p>
@@ -171,7 +173,7 @@
             <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-4 mt-5 gap-3rem">
               <div class="block rounded-lg  shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700" v-for="(project, index) in projects" :key="index" @mouseover="project.hovered = false" @mouseout="project.hovered = true">
                   <div :class="`__project ${project.hovered ? '':'bg-yellow-400'}`" @click="projectModal(project)">
-                      <img :class="`rounded-lg pointer-events-none`" :src="`./assets/images/portfolio/${project.img}`" :alt="`${project.label}`" v-if="project.hovered === true" />
+                      <img :class="`rounded-lg `" :src="`./assets/images/portfolio/${project.img}`" :alt="`${project.label}`" v-if="project.hovered === true" />
                       <h1 :class="`${project.hovered ? 'hidden':''}`">{{project.label}}</h1>
                   </div>
               </div>
@@ -185,9 +187,75 @@
               <h1>GET IN <span>TOUCH</span></h1>
               <span class="title-bg">CONTACT</span>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3">
-              <div class="col-span-1 md:col-span-1 lg:col-span-1">First column (30%)</div>
-              <div class="col-span-1 md:col-span-2 lg:col-span-2">Second column (70%)</div>
+            <div class="grid grid-cols-1 md:grid-cols-3 items-center">
+              <div class="col-span-1 md:col-span-1 lg:col-span-1">
+                <h1>DON'T BE SHY !</h1>
+                <p class="mt-5">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                <ul class="mt-5 personal-info">
+                  <li>
+                      <div>
+                        <i class="fa-sharp fa-solid fa-map-location"></i>
+                      </div>
+                      <div>
+                        <h2>Address Point</h2>
+                        <p>Zone 5 Barangay Care Tarlac City, <br>Tarlac 2300</p>
+                      </div>
+                  </li>
+                  <li>
+                      <div>
+                        <i class="fa-solid fa-envelope"></i>
+                      </div>
+                      <div>
+                        <h2>EMAIL ME</h2>
+                        <p><a href="mailto:jhomignacio05@gmail.com" target="_blank">jhomignacio05@gmail.com</a></p>
+                      </div>
+                  </li>
+                  <li>
+                      <div>
+                        <i class="fa-brands fa-whatsapp"></i>
+                      </div>
+                      <div>
+                        <h2>WHATSAPP</h2>
+                        <p><a href="https://api.whatsapp.com/send?phone=09352989795" target="_blank">09352989795</a></p>
+                      </div>
+                  </li>
+                  <li>
+                      <div>
+                        <i class="fa-brands fa-skype"></i>
+                      </div>
+                      <div>
+                        <h2>SKYPE</h2>
+                        <p><a href="skype:live:cid.bdc98ed4ff57a19a?chat" target="_blank"> live:.cid.bdc98ed4ff57a19a</a></p>
+                      </div>
+                  </li>
+                </ul>
+                <div class="soc-med">
+                  <ul>
+                    <li><i class="fa-brands fa-facebook-f"></i></li>
+                    <li><i class="fa-brands fa-twitter"></i></li>
+                    <li><i class="fa-brands fa-youtube"></i></li>
+                    <li><i class="fa-brands fa-github"></i></li>
+                    <li><i class="fa-brands fa-linkedin"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-span-1 md:col-span-2 lg:col-span-2 contact-form mt-5 px-5">
+                  <form action="">
+                      <div class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-4 my-5">
+                          <div>
+                            <input type="text" placeholder="YOUR NAME" class="border border-gray-300 focus:border-blue-500 outline-none px-4 py-2">
+                          </div>
+                          <div>
+                            <input type="email" placeholder="YOUR EMAIL" class="border border-gray-300 focus:border-blue-500 outline-none px-4 py-2">
+                          </div>
+                      </div>
+                      <div>
+                        <input type="text" placeholder="YOUR SUBJECT" class="border border-gray-300 focus:border-blue-500 outline-none px-4 py-2">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="YOUR MESSAGE"></textarea>
+                      </div>
+                      <button type="submit" class="btn-main send-message my-5">SEND MESSAGE <i class="fa-solid fa-paper-plane"></i></button>
+                  </form>
+              </div>
             </div>  
           </section>
       </transition>
@@ -197,7 +265,7 @@
         <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
           <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
           <div class="fixed inset-0 z-10 overflow-y-auto">
-            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div class="flex min-h-full lg:items-end sm:items-center justify-center p-4 text-center sm:p-0" >
               <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full w-80">
                 <!-- <div class="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"> -->
                   <button type="button" class=" absolute top-5 right-5 inline-flex w-full justify-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm  sm:ml-3 sm:w-auto" @click="RemoveModal()"><i class="fa-sharp fa-solid fa-xmark fa-lg" style="color:#333;"></i></button>
@@ -216,21 +284,25 @@
         <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
           <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
           <div class="fixed inset-0 z-10 overflow-y-auto">
-            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0" id="project-modal">
               <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full w-80">
                 <!-- <div class="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"> -->
                   <button type="button" class=" absolute top-5 right-5 inline-flex w-full justify-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm  sm:ml-3 sm:w-auto" @click="CloseprojectModal()"><i class="fa-sharp fa-solid fa-xmark fa-lg" style="color:#333;"></i></button>
                 <!-- </div> -->
                 <div class="bg-white" >
                   <div class="title p-5">{{active_project.label}}</div>
-                  <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-5 gap-3rem p-5">
+                  <div class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-4 lg:mt-5 gap-3rem p-5 ">
                       <div class="col">
-                        <p><i class="fa-solid fa-file-lines"></i>Framework : {{active_project.framework}}</p>
-                        <p><i class="fa-solid fa-code"></i>Languages : {{active_project.language}}</p>
+                        <ul>
+                          <li><i class="fa-solid fa-file-lines"></i>Framework : {{active_project.framework}}</li>
+                          <li><i class="fa-solid fa-code"></i>Languages : {{active_project.language}}</li>
+                        </ul>
                       </div>
                       <div class="col">
-                        <p> <i class="fa-solid fa-user"></i>Company: {{active_project.client}}</p>
-                        <p> <i class="fa-solid fa-link"></i>Preview<a :href="`${active_project.url}`" target="_blank">:{{active_project.url}}</a></p>
+                        <ul>
+                          <li><i class="fa-solid fa-user"></i> Company: {{active_project.client}}</li>
+                          <li><i class="fa-solid fa-link"></i><a :href="`${active_project.url}`" target="_blank">{{active_project.url}}</a></li>
+                        </ul>
                       </div>
                   </div>
                   <img :src="`assets/images/portfolio/${active_project.img}`" alt="" class="p-5">
@@ -251,13 +323,13 @@
         modal_aboutme:false,
         modal_portfolio:false,
         active_project:[],
-        current_page:'about',
+        current_page:'contact',
         menuItems: [
             { label: 'Home',icon:'fa-house-user',hovered: false ,active:true  ,page:'home'},
             { label: 'About',icon:'fa-user',hovered: false ,active:false ,page:'about' },
             { label: 'Portfolio',icon:'fa-briefcase',hovered: false ,active:false ,page:'portfolio' },
             { label: 'Contact',icon:'fa-envelope-open',hovered: false ,active:false ,page:'contact'},
-            { label: 'Blog',icon:'fa-newspaper' ,hovered: false ,active:false ,page:'blog'},
+            // { label: 'Blog',icon:'fa-newspaper' ,hovered: false ,active:false ,page:'blog'},
           ],
           personalData: [
             { label: 'First Name', value: 'Jhomel' },
@@ -282,10 +354,10 @@
             {label:'SHOPIFY',rate:'70'},
           ],
           cards:[
-            {label1:'Years', label2:'of Experience',experience:'3'},
-            {label1:'Frameworks', label2:'Used',experience:'4'},
+            {label1:'Years of Experience in', label2:'WORDPRESS',experience:'3'},
+            {label1:'Years of Experience in', label2:'LARAVEL',experience:'2'},
+            {label1:'Years of Experience in', label2:'VUEJS',experience:'1'},
             {label1:'Projects', label2:'Created',experience:'9'},
-            {label1:'Company', label2:'Served',experience:'2'},
           
           ],
           projects:[

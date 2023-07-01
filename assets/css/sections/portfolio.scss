@@ -1,4 +1,8 @@
 section.portfolio{
+    @media screen and(max-width:768px) {
+        margin-bottom: 100px;
+        min-height: 100vh;
+    }
     .gap-3rem{
         gap: 3rem;
         .__project{
@@ -11,7 +15,9 @@ section.portfolio{
             transition-duration: 1.5s;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             @media screen and (max-width:1024px) {
-                height: auto !important;
+                // height: auto !important;
+                height: 170px;
+                transition-duration: 0s;
             }
             h1{
                 position: absolute;
@@ -29,6 +35,10 @@ section.portfolio{
             img{
                 height: 100%;
                 object-fit: cover;
+                @media screen and (max-width:768px) {
+                    // height: auto !important;
+                    transition-duration: 0s;
+                }
             }
         }
     }

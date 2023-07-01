@@ -1,3 +1,10 @@
+@media screen and (max-width: 768px) {
+  section.portfolio {
+    margin-bottom: 100px;
+    min-height: 100vh;
+  }
+}
+
 section.portfolio .gap-3rem {
   gap: 3rem;
 }
@@ -15,7 +22,9 @@ section.portfolio .gap-3rem .__project {
 
 @media screen and (max-width: 1024px) {
   section.portfolio .gap-3rem .__project {
-    height: auto !important;
+    height: 170px;
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
   }
 }
 
@@ -38,5 +47,12 @@ section.portfolio .gap-3rem .__project img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  section.portfolio .gap-3rem .__project img {
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
+  }
 }
 /*# sourceMappingURL=portfolio.css.map */

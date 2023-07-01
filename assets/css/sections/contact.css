@@ -1,0 +1,192 @@
+section.contact {
+  margin-bottom: 100px;
+}
+
+section.contact .title-section {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  height: 100px;
+  margin: auto;
+}
+
+section.contact .title-section h1 {
+  color: #666;
+  font-size: 56px;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  margin: 0;
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  section.contact .title-section h1 {
+    font-size: 2rem;
+    line-height: 2rem  !important;
+  }
+}
+
+section.contact .title-section h1 span {
+  color: #ffb400;
+}
+
+section.contact .title-bg {
+  opacity: 0.1;
+  font-size: 110px;
+  letter-spacing: 10px;
+  line-height: .7;
+  text-transform: uppercase;
+  font-weight: 800;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+
+@media screen and (max-width: 768px) {
+  section.contact .title-bg {
+    font-size: 3rem;
+  }
+}
+
+section.contact h1 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #666;
+  font-family: 'Poppins', sans-serif;
+}
+
+section.contact p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+section.contact .personal-info li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px;
+}
+
+section.contact .personal-info li i {
+  color: #ffb400;
+  font-size: 3rem;
+}
+
+section.contact .personal-info li h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+}
+
+section.contact .soc-med {
+  margin-top: 50px;
+}
+
+section.contact .soc-med ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.contact .soc-med ul li {
+  background: #eee;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.contact .soc-med ul li i {
+  padding: 10px;
+}
+
+section.contact .soc-med ul li i:hover {
+  color: #fff;
+}
+
+section.contact .soc-med ul li:hover {
+  background: #ffb400;
+  color: #fff;
+}
+
+section.contact .contact-form form {
+  width: 80%;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  section.contact .contact-form form {
+    width: 100%;
+  }
+}
+
+section.contact .contact-form form input {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 100%;
+  color: #666;
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+section.contact .contact-form form input:focus {
+  border: 1px solid #ffb300ad;
+  outline: none;
+}
+
+section.contact .contact-form form textarea {
+  margin-top: 40px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #666;
+  width: 100%;
+  padding: 12px 26px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 30px;
+  outline: none !important;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+section.contact .contact-form form textarea:focus {
+  border: 1px solid #ffb300ad;
+  outline: none;
+}
+
+section.contact .contact-form form button {
+  width: auto !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+}
+/*# sourceMappingURL=contact.css.map */

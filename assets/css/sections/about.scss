@@ -1,7 +1,9 @@
 section.about,
-section.portfolio,
-section.contact{
- 
+section.portfolio{
+    @media screen and(max-width:768px) {
+        margin-bottom: 100px;
+        min-height: 100vh;
+    }
   .title-section{
       position: relative;
       display: flex;

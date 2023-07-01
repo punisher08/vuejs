@@ -102,6 +102,10 @@
 @media screen and (max-width: 768px) {
   .section1 .profile .profile-md {
     display: block;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: top;
+       object-position: top;
   }
 }
 
@@ -183,6 +187,13 @@
   font-family: 'Poppins', sans-serif;
 }
 
+@media screen and (max-width: 768px) {
+  .section1 .data .objective {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
 .section1 .data .bg-yellow {
   background: #ffb400;
   color: #fff;
@@ -211,8 +222,21 @@
     bottom: 0;
     position: absolute;
     right: 0;
+    -webkit-transform: translate(-10%);
+            transform: translate(-10%);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .navigations .nav-menu {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    bottom: 50px;
+    position: absolute;
+    right: 50%;
     -webkit-transform: translate(5%);
-            transform: translate(5%);
+    transform: translate(-50%, 50%);
   }
 }
 
@@ -230,6 +254,12 @@
   background: #eeeeee;
   color: #666666;
   border: 1px solid #eeeeee;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .navigations .nav-menu .bg-normal {
+    margin-right: 20px;
+  }
 }
 
 .navigations .nav-menu .bg-yellow {
@@ -349,6 +379,12 @@
   width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+  .dark .section1 {
+    min-height: 100vh;
+  }
+}
+
 .dark .styled-bg {
   position: fixed;
   height: 200%;
@@ -434,7 +470,7 @@
 }
 
 .dark .data .role span {
-  color: #666;
+  color: #fff;
   font-size: 2rem;
 }
 
@@ -457,6 +493,18 @@
   line-height: 35px;
   font-weight: 200;
   font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .dark .data .objective {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+.dark .data button {
+  color: #fff;
 }
 
 .dark .data .bg-yellow {
@@ -533,6 +581,13 @@
   border-radius: 50%;
 }
 
+@media screen and (max-width: 768px) {
+  .dark section.about,
+  .dark section.portfolio {
+    margin-bottom: 100px;
+  }
+}
+
 .dark section.about .title-section,
 .dark section.portfolio .title-section {
   position: relative;
@@ -562,6 +617,14 @@
   color: #ffb400;
 }
 
+@media screen and (max-width: 768px) {
+  .dark section.about .title-section h1,
+  .dark section.portfolio .title-section h1 {
+    font-size: 2rem;
+    line-height: 2rem !important;
+  }
+}
+
 .dark section.about .title-section .title-bg,
 .dark section.portfolio .title-section .title-bg {
   opacity: 0.3;
@@ -576,6 +639,14 @@
   -webkit-transform: translate(-50%, 0%);
           transform: translate(-50%, 0%);
   color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .dark section.about .title-section .title-bg,
+  .dark section.portfolio .title-section .title-bg {
+    font-size: 3rem;
+    line-height: 2rem !important;
+  }
 }
 
 .dark .personal-information .__data h1 {
@@ -628,6 +699,12 @@
   color: #fff  !important;
 }
 
+@media screen and (max-width: 768px) {
+  .dark section.about {
+    margin-bottom: 100px;
+  }
+}
+
 .dark section.about .experience-section .main-heading {
   color: #fff;
 }
@@ -658,9 +735,215 @@
   color: #fff;
 }
 
+.dark {
+  min-height: 100vh;
+}
+
+.dark section.contact {
+  margin-bottom: 100px;
+}
+
+.dark section.contact .title-section {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  height: 100px;
+  margin: auto;
+}
+
+.dark section.contact .title-section h1 {
+  color: #fff;
+  font-size: 56px;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  margin: 0;
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .dark section.contact .title-section h1 {
+    font-size: 2rem;
+    line-height: 2rem  !important;
+  }
+}
+
+.dark section.contact .title-section h1 span {
+  color: #ffb400;
+}
+
+.dark section.contact .title-bg {
+  opacity: 0.1;
+  font-size: 110px;
+  letter-spacing: 10px;
+  line-height: .7;
+  text-transform: uppercase;
+  font-weight: 800;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  color: #fff;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+
+@media screen and (max-width: 768px) {
+  .dark section.contact .title-bg {
+    font-size: 3rem;
+  }
+}
+
+.dark section.contact h1 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dark section.contact p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  color: #fff;
+}
+
+.dark section.contact .personal-info li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px;
+}
+
+.dark section.contact .personal-info li i {
+  color: #ffb400;
+  font-size: 3rem;
+}
+
+.dark section.contact .personal-info li h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+}
+
+.dark section.contact .soc-med {
+  margin-top: 50px;
+}
+
+.dark section.contact .soc-med ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dark section.contact .soc-med ul li {
+  background: #eee;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dark section.contact .soc-med ul li i {
+  padding: 10px;
+}
+
+.dark section.contact .soc-med ul li i:hover {
+  color: #fff;
+}
+
+.dark section.contact .soc-med ul li:hover {
+  background: #ffb400;
+  color: #fff;
+}
+
+.dark section.contact .contact-form form {
+  width: 80%;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .dark section.contact .contact-form form {
+    width: 100%;
+  }
+}
+
+.dark section.contact .contact-form form input {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 100%;
+  color: #666;
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+.dark section.contact .contact-form form input:focus {
+  border: 1px solid #ffb300ad;
+  outline: none;
+}
+
+.dark section.contact .contact-form form textarea {
+  margin-top: 40px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #666;
+  width: 100%;
+  padding: 12px 26px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 30px;
+  outline: none !important;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.dark section.contact .contact-form form textarea:focus {
+  border: 1px solid #ffb300ad;
+  outline: none;
+}
+
+.dark section.contact .contact-form form button {
+  width: auto !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  color: #fff !important;
+}
+
+@media screen and (max-width: 768px) {
+  section.about,
+  section.portfolio {
+    margin-bottom: 100px;
+    min-height: 100vh;
+  }
+}
+
 section.about .title-section,
-section.portfolio .title-section,
-section.contact .title-section {
+section.portfolio .title-section {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -674,8 +957,7 @@ section.contact .title-section {
 }
 
 section.about .title-section h1,
-section.portfolio .title-section h1,
-section.contact .title-section h1 {
+section.portfolio .title-section h1 {
   color: #666;
   font-size: 56px;
   font-weight: 900 !important;
@@ -686,22 +968,19 @@ section.contact .title-section h1 {
 
 @media screen and (max-width: 768px) {
   section.about .title-section h1,
-  section.portfolio .title-section h1,
-  section.contact .title-section h1 {
+  section.portfolio .title-section h1 {
     font-size: 2rem;
     line-height: 2rem  !important;
   }
 }
 
 section.about .title-section h1 span,
-section.portfolio .title-section h1 span,
-section.contact .title-section h1 span {
+section.portfolio .title-section h1 span {
   color: #ffb400;
 }
 
 section.about .title-section .title-bg,
-section.portfolio .title-section .title-bg,
-section.contact .title-section .title-bg {
+section.portfolio .title-section .title-bg {
   opacity: 0.1;
   font-size: 110px;
   letter-spacing: 10px;
@@ -717,15 +996,13 @@ section.contact .title-section .title-bg {
 
 @media screen and (max-width: 768px) {
   section.about .title-section .title-bg,
-  section.portfolio .title-section .title-bg,
-  section.contact .title-section .title-bg {
+  section.portfolio .title-section .title-bg {
     font-size: 3rem;
   }
 }
 
 section.about .personal-information .__data h1,
-section.portfolio .personal-information .__data h1,
-section.contact .personal-information .__data h1 {
+section.portfolio .personal-information .__data h1 {
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 500;
@@ -733,23 +1010,20 @@ section.contact .personal-information .__data h1 {
 }
 
 section.about .personal-information .__data p,
-section.portfolio .personal-information .__data p,
-section.contact .personal-information .__data p {
+section.portfolio .personal-information .__data p {
   font-family: 'Poppins',sans-serif;
   font-weight: 400;
 }
 
 section.about .personal-information .credentials ._cards a,
-section.portfolio .personal-information .credentials ._cards a,
-section.contact .personal-information .credentials ._cards a {
+section.portfolio .personal-information .credentials ._cards a {
   height: 100%;
   font-size: 1.2rem;
   border: 1px solid #efefef;
 }
 
 section.about .personal-information .credentials ._cards a dt,
-section.portfolio .personal-information .credentials ._cards a dt,
-section.contact .personal-information .credentials ._cards a dt {
+section.portfolio .personal-information .credentials ._cards a dt {
   margin: 0;
   font-size: 50px;
   font-weight: 800;
@@ -757,14 +1031,12 @@ section.contact .personal-information .credentials ._cards a dt {
 }
 
 section.about .personal-information .credentials ._cards a dd,
-section.portfolio .personal-information .credentials ._cards a dd,
-section.contact .personal-information .credentials ._cards a dd {
+section.portfolio .personal-information .credentials ._cards a dd {
   font-weight: 300;
 }
 
 section.about .personal-information .credentials ._cards a dd span.sm-line,
-section.portfolio .personal-information .credentials ._cards a dd span.sm-line,
-section.contact .personal-information .credentials ._cards a dd span.sm-line {
+section.portfolio .personal-information .credentials ._cards a dd span.sm-line {
   border: 1px solid #333;
   width: 30px;
   margin-right: 20px;
@@ -849,6 +1121,13 @@ section.about .experience-section .col ul li p {
   font-weight: 300;
 }
 
+@media screen and (max-width: 768px) {
+  section.portfolio {
+    margin-bottom: 100px;
+    min-height: 100vh;
+  }
+}
+
 section.portfolio .gap-3rem {
   gap: 3rem;
 }
@@ -866,7 +1145,9 @@ section.portfolio .gap-3rem .__project {
 
 @media screen and (max-width: 1024px) {
   section.portfolio .gap-3rem .__project {
-    height: auto !important;
+    height: 170px;
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
   }
 }
 
@@ -889,6 +1170,13 @@ section.portfolio .gap-3rem .__project img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  section.portfolio .gap-3rem .__project img {
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
+  }
 }
 
 @-webkit-keyframes fade-out {
@@ -1331,6 +1619,198 @@ section.portfolio .gap-3rem .__project img {
   }
 }
 
+section.contact {
+  margin-bottom: 100px;
+}
+
+section.contact .title-section {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  height: 100px;
+  margin: auto;
+}
+
+section.contact .title-section h1 {
+  color: #666;
+  font-size: 56px;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  margin: 0;
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  section.contact .title-section h1 {
+    font-size: 2rem;
+    line-height: 2rem  !important;
+  }
+}
+
+section.contact .title-section h1 span {
+  color: #ffb400;
+}
+
+section.contact .title-bg {
+  opacity: 0.1;
+  font-size: 110px;
+  letter-spacing: 10px;
+  line-height: .7;
+  text-transform: uppercase;
+  font-weight: 800;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+
+@media screen and (max-width: 768px) {
+  section.contact .title-bg {
+    font-size: 3rem;
+  }
+}
+
+section.contact h1 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #666;
+  font-family: 'Poppins', sans-serif;
+}
+
+section.contact p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+section.contact .personal-info li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px;
+}
+
+section.contact .personal-info li i {
+  color: #ffb400;
+  font-size: 3rem;
+}
+
+section.contact .personal-info li h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+}
+
+section.contact .soc-med {
+  margin-top: 50px;
+}
+
+section.contact .soc-med ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.contact .soc-med ul li {
+  background: #eee;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.contact .soc-med ul li i {
+  padding: 10px;
+}
+
+section.contact .soc-med ul li i:hover {
+  color: #fff;
+}
+
+section.contact .soc-med ul li:hover {
+  background: #ffb400;
+  color: #fff;
+}
+
+section.contact .contact-form form {
+  width: 80%;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  section.contact .contact-form form {
+    width: 100%;
+  }
+}
+
+section.contact .contact-form form input {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 100%;
+  color: #666;
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+section.contact .contact-form form input:focus {
+  border: 1px solid #ffb300ad;
+  outline: none;
+}
+
+section.contact .contact-form form textarea {
+  margin-top: 40px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #666;
+  width: 100%;
+  padding: 12px 26px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 30px;
+  outline: none !important;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+section.contact .contact-form form textarea:focus {
+  border: 1px solid #ffb300ad;
+  outline: none;
+}
+
+section.contact .contact-form form button {
+  width: auto !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+}
+
 .skills-section h1 {
   text-align: center;
   font-family: 'Poppins',sans-serif;
@@ -1434,9 +1914,21 @@ body::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
 
+#modal_portfolio .col {
+  width: 100%;
+  overflow: hidden;
+}
+
 #modal_portfolio .w-80 {
   width: 50%;
   max-width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  #modal_portfolio .w-80 {
+    width: 90%;
+    max-width: 90%;
+  }
 }
 
 #modal_portfolio .title {
@@ -1448,6 +1940,13 @@ body::-webkit-scrollbar-thumb {
   color: #ffb400;
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  #modal_portfolio .title {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
 }
 
 #modal_portfolio p {
@@ -1470,5 +1969,26 @@ body::-webkit-scrollbar-thumb {
 
 #modal_portfolio i {
   padding-right: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  #dl {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #project-modal {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+#project-modal button {
+  margin: 0;
+  padding: 0;
+  -webkit-transform: translate(50%, 0%);
+          transform: translate(50%, 0%);
 }
 /*# sourceMappingURL=styles.css.map */
