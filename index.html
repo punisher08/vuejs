@@ -68,7 +68,7 @@
                   </div>
                 </div>
                 <div class="pt-5 mt-5">
-                  <button :class="`btn-main flex items-center justify-center bg-yellow}`">DOWNLOAD CV <i class="fa-solid fa-download"></i></button>    
+                  <button :class="`btn-main flex items-center justify-center bg-yellow}`" @click="OpenCV()"> DOWNLOAD CV <i class="fa-solid fa-download"></i></button>    
                 </div>
             </div>
             <div class="credentials p-5">
@@ -323,7 +323,7 @@
         modal_aboutme:false,
         modal_portfolio:false,
         active_project:[],
-        current_page:'contact',
+        current_page:'home',
         menuItems: [
             { label: 'Home',icon:'fa-house-user',hovered: false ,active:true  ,page:'home'},
             { label: 'About',icon:'fa-user',hovered: false ,active:false ,page:'about' },
@@ -381,6 +381,12 @@
        
       },
       methods:{
+        OpenCV(){
+          window.open(
+            'jhomcv.pdf',
+            '_blank'
+          );
+        },
         projectModal(project){
           this.modal_portfolio = true;
           this.active_project = project;
