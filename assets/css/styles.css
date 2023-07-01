@@ -1895,6 +1895,13 @@ section.contact .contact-form form button {
   max-width: 80%;
 }
 
+@media screen and (max-width: 768px) {
+  #modal1 .w-80 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 body {
   overflow: scroll;
   scrollbar-width: thin;
@@ -1926,8 +1933,8 @@ body::-webkit-scrollbar-thumb {
 
 @media screen and (max-width: 768px) {
   #modal_portfolio .w-80 {
-    width: 90%;
-    max-width: 90%;
+    width: 90% !important;
+    max-width: 90% !important;
   }
 }
 
