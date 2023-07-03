@@ -1998,15 +1998,18 @@ body::-webkit-scrollbar-thumb {
 }
 
 #project-modal button {
-  margin: 0;
-  padding: 0;
-  -webkit-transform: translate(50%, 0%);
-          transform: translate(50%, 0%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  left: 0;
 }
 
 @media screen and (max-width: 768px) {
   .close-about-modal {
-    right: 5px;
+    left: 5px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

@@ -384,14 +384,17 @@ body {
     align-items: center;
   }
   button{
-    margin: 0;
-    padding: 0;
-    transform: translate(50%,0%);
+    // margin: 0;
+    // padding: 0;
+    // transform: translate(50%,0%);
+    display: flex;
+    justify-content: flex-start;
+    left: 0;
   }
 }
 @media screen and (max-width:768px) {
   .close-about-modal{
-    right: 5px;
+    left: 5px;
     display: flex;
     justify-content: center;
     width: 30px;
@@ -404,6 +407,11 @@ body {
   #mobile-nav{
     z-index: 999;
   }
+  // .close-project-modal{
+  //   display: flex;
+  //   justify-content: flex-start;
+  //   left: 15px;
+  // }
 }
 #mobile-nav{
   z-index: 999;
