@@ -454,12 +454,13 @@
                     width: 100%;
                 }
                 input{
-                    background-color: #fff;
+                    background-color: transparent;
                     border: 1px solid #ddd;
                     width: 100%;
                     color: #666;
                     padding: 10px 20px;
                     border-radius: 30px;
+                    
                     &:focus{
                         border: 1px solid #ffb300ad;
                         outline: none;
@@ -467,7 +468,7 @@
                 }
                 textarea{
                     margin-top: 40px;
-                    background-color: #fff;
+                    background-color: transparent;
                     border: 1px solid #ddd;
                     color: #666;
                     width: 100%;

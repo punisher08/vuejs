@@ -67,6 +67,10 @@ section.contact p {
   font-weight: 300;
 }
 
+section.contact .personal-info {
+  word-break: break-word;
+}
+
 section.contact .personal-info li {
   display: -webkit-box;
   display: -ms-flexbox;

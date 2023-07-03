@@ -50,6 +50,7 @@ section.contact{
         font-weight: 300;
     }
     .personal-info{
+        word-break: break-word;
         li{
             display: flex;
             gap: 20px;
