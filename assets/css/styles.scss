@@ -103,11 +103,12 @@ $icon_light:#000;
         left: 50%;
         @media screen and(max-width:768px) {
           position: relative;
-          left: 15px;
+          left: 0;
           top: 0;
           bottom: 0;
           transform: translate(0);
           margin-bottom: 100px;
+          padding: 20px;
         }
         .role{
             font-size: 3rem;
@@ -387,4 +388,23 @@ body {
     padding: 0;
     transform: translate(50%,0%);
   }
+}
+@media screen and (max-width:768px) {
+  .close-about-modal{
+    right: 5px;
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    background: #eae7e7;
+    border-radius: 100%;
+    top: 5px;
+  }
+  #mobile-nav{
+    z-index: 999;
+  }
+}
+#mobile-nav{
+  z-index: 999;
 }

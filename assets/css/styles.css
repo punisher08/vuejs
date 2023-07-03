@@ -143,12 +143,13 @@
 @media screen and (max-width: 768px) {
   .section1 .data {
     position: relative;
-    left: 15px;
+    left: 0;
     top: 0;
     bottom: 0;
     -webkit-transform: translate(0);
             transform: translate(0);
     margin-bottom: 100px;
+    padding: 20px;
   }
 }
 
@@ -890,7 +891,7 @@
 }
 
 .dark section.contact .contact-form form input {
-  background-color: #fff;
+  background-color: transparent;
   border: 1px solid #ddd;
   width: 100%;
   color: #666;
@@ -905,7 +906,7 @@
 
 .dark section.contact .contact-form form textarea {
   margin-top: 40px;
-  background-color: #fff;
+  background-color: transparent;
   border: 1px solid #ddd;
   color: #666;
   width: 100%;
@@ -1688,6 +1689,10 @@ section.contact p {
   font-weight: 300;
 }
 
+section.contact .personal-info {
+  word-break: break-word;
+}
+
 section.contact .personal-info li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1997,5 +2002,32 @@ body::-webkit-scrollbar-thumb {
   padding: 0;
   -webkit-transform: translate(50%, 0%);
           transform: translate(50%, 0%);
+}
+
+@media screen and (max-width: 768px) {
+  .close-about-modal {
+    right: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 30px;
+    height: 30px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: #eae7e7;
+    border-radius: 100%;
+    top: 5px;
+  }
+  #mobile-nav {
+    z-index: 999;
+  }
+}
+
+#mobile-nav {
+  z-index: 999;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jhomel Ignacio Vue CV  </title>
-  <link rel="icon" type="image/png" href="assets/images/icon.png">
+  <link rel="icon" type="image/png" href="assets/images/profileimg.jpg">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="https://kit.fontawesome.com/f8208da359.js" crossorigin="anonymous"></script>
@@ -18,11 +18,11 @@
   <div id="app">
     <div :class="`${darkmode ? 'dark' : 'light'}`">
       <section class="navigations">
-          <div  @click="Darkmode()" class="fixed top-0 right-10 md:right-0  flex flex-col text-dark p-4 z-20 h-auto min-h-0" id="dl">
+          <div  @click="Darkmode()" class="fixed top-0 right-10 md:right-0  flex flex-col text-dark p-4 z-20 h-auto min-h-0" id="dl" v-if="darkmode_icon">
             <i :class="`fa-regular ${darkmode ? 'fa-lightbulb' : 'fa-moon'} dark-or-light-mode rounded border border-black p-3`"></i>
             <!-- <i class="fa-solid fa-lightbulb dark-or-light-mode"></i> -->
           </div>
-          <div class="fixed top-0 right-10 md:right-0  h-full flex flex-col justify-center items-center  text-dark p-4 z-10">
+          <div class="fixed top-0 right-10 md:right-0  h-full flex flex-col justify-center items-center  text-dark p-4 z-1 " id="mobile-nav">
               <ul class="nav-menu">
                 <li v-for="(item, index) in menuItems" :key="index" @mouseover="Toggle(item,menuItems)" @mouseout="item.hovered = false" :class="`${current_page === item.page ? 'active' : ''} flex items-center justify-center mb-4 ${item.hovered ? 'btn-hovered' : ''} ${item.hovered ? 'bg-yellow' : 'bg-normal'}`"   v-on:click="Page(item)">
                   <span :class="{ 'show': item.hovered }" class="hidden">{{ item.label }}</span>
@@ -45,7 +45,7 @@
                     <div class="objective">
                       I am a skilled Filipino web developer with a strong passion for crafting efficient web applications. My goal is to create user-friendly solutions that streamline and automate tasks, enhancing productivity and convenience.
                     </div>     
-                    <button @click="AddModal()" :class="`btn-main flex items-center justify-center  ${btn_toggle ? 'bg-yellow' : ''}`" @mouseover="btn_toggle = true" @mouseout="btn_toggle = false">More about me<i class="fa-sharp fa-solid fa-arrow-right fa-lg "></i></button>    
+                    <button @click="AddModal()" :class="`z-20 btn-main flex items-center justify-center  ${btn_toggle ? 'bg-yellow' : ''}`" @mouseover="btn_toggle = true" @mouseout="btn_toggle = false">More about me<i class="fa-sharp fa-solid fa-arrow-right fa-lg "></i></button>    
                 </div>
             </div>
             <div id="modal"></div>
@@ -268,7 +268,7 @@
             <div class="flex min-h-full lg:items-end sm:items-center justify-center p-4 text-center sm:p-0" >
               <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full w-80">
                 <!-- <div class="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"> -->
-                  <button type="button" class=" absolute top-5 right-5 inline-flex w-full justify-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm  sm:ml-3 sm:w-auto" @click="RemoveModal()"><i class="fa-sharp fa-solid fa-xmark fa-lg" style="color:#333;"></i></button>
+                  <button type="button" class="close-about-modal absolute top-5 right-5 inline-flex w-full justify-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm  sm:ml-3 sm:w-auto" @click="RemoveModal()"><i class="fa-sharp fa-solid fa-xmark fa-lg" style="color:#333;"></i></button>
                 <!-- </div> -->
                 <div class="bg-white" >
                   <iframe src="aboutme.html" width="100%" height="700px"></iframe>
@@ -375,6 +375,7 @@
           isHovered: false,
           btn_toggle:false,
           darkmode:false,
+          darkmode_icon:true,
           progressbarCalled:false,
       },
       computed:{
@@ -421,9 +422,11 @@
         },
         RemoveModal(){
           this.modal_aboutme = false;
+          this.darkmode_icon = true;
         },
         AddModal(){
           this.modal_aboutme = true;
+          this.darkmode_icon = false;
           
         },
         Progressbar(){
