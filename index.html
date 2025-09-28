@@ -32,23 +32,33 @@
           </div>
       </section>
       <!-- Home page -->
+   
+      
       <transition name="fade">
-        <section :class="`main-page section1 container ${current_page === 'home' ? 'fade-upward':''}`" v-if="current_page === 'home'">
-            <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
-                <div class="profile  lg:block">
-                    <div class="bg-yellow-400 h-screen w-screen fixed transform -rotate-15 -left-4/5 -top-1/2 styled-bg"></div>   
-                    <div class="__image" ></div>  
-                    <img src="assets/images/profileimg.jpg" alt="" class="profile-md hidden">             
-                </div>
+        <section :class="`main-page section1 container p-5 mx-auto ${current_page === 'home' ? 'fade-upward':''}`" v-if="current_page === 'home'">
+            <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 items-center">
+              
                 <div class="data">   
                     <div class="role"><i class="fa-solid fa-minus"></i>I'M JHOMEL <span><br> FULL STACK WEB DEVELOPER </span></div> 
                     <div class="objective">
                       I am a skilled Filipino web developer with a strong passion for crafting efficient web applications. My goal is to create user-friendly solutions that streamline and automate tasks, enhancing productivity and convenience.
                     </div>     
-                   
+                </div>
+                <div class="relative flex justify-center">
+                  
+<!--?xml version="1.0" standalone="no"?-->
+              <svg id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs> 
+                        <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
+                            <stop id="stop1" stop-color="rgba(223.836, 80.514, 6.398, 1)" offset="0%"></stop>
+                            <stop id="stop2" stop-color="rgba(255, 216.489, 0, 1)" offset="100%"></stop>
+                        </linearGradient>
+                    </defs>
+                <path fill="url(#sw-gradient)" d="M14.8,-20.6C20.8,-16,28.3,-13.8,32.8,-8.6C37.4,-3.4,38.9,4.9,35.4,10.2C31.9,15.6,23.4,18.1,16.7,23.8C9.9,29.5,5,38.4,-0.5,39.1C-5.9,39.7,-11.8,32.1,-19.7,26.7C-27.5,21.4,-37.2,18.3,-38.4,12.9C-39.6,7.5,-32.1,-0.3,-27.8,-7.6C-23.4,-14.9,-22.1,-21.8,-18,-26.9C-13.9,-32.1,-6.9,-35.5,-1.3,-33.8C4.4,-32,8.8,-25.1,14.8,-20.6Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="0" style="transition: 0.3s;" stroke="url(#sw-gradient)"></path>
+              </svg>
+                  <img src="assets/images/profileimage.png" alt="" class="profile-md absolute" style="top:0;">     
                 </div>
             </div>
-            <div id="modal"></div>
         </section>
       </transition>
 
@@ -207,7 +217,7 @@
                       </div>
                       <div>
                         <h2>EMAIL ME</h2>
-                        <p><a href="mailto:jhomignacio05@gmail.com" target="_blank">jhomignacio05@gmail.com</a></p>
+                        <p><a href="mailto:jhomignacio08@gmail.com" target="_blank">jhomignacio08@gmail.com</a></p>
                       </div>
                   </li>
                   <li>
@@ -219,15 +229,7 @@
                         <p><a href="https://api.whatsapp.com/send?phone=09352989795" target="_blank">09352989795</a></p>
                       </div>
                   </li>
-                  <li>
-                      <div>
-                        <i class="fa-brands fa-skype"></i>
-                      </div>
-                      <div>
-                        <h2>SKYPE</h2>
-                        <p><a href="skype:live:cid.bdc98ed4ff57a19a?chat" target="_blank"> live:.cid.bdc98ed4ff57a19a</a></p>
-                      </div>
-                  </li>
+
                 </ul>
                 <div class="soc-med">
                   <ul>
@@ -334,24 +336,23 @@
           personalData: [
             { label: 'First Name', value: 'Jhomel' },
             { label: 'Last Name', value: 'Ignacio' },
-            { label: 'Age', value: '28' },
+            { label: 'Age', value: '29' },
             { label: 'Gender', value: 'Male' },
             { label: 'Nationality', value: 'Filipino' },
             { label: 'Address', value: 'Barangay Care Tarlac City' },
             { label: 'Phone', value: '+63935 298 9795' },
-            { label: 'Email', value: 'jhomignacio05@gmail.com' },
-            { label: 'Skype', value: 'live:.cid.bdc98ed4ff57a19a' },
+            { label: 'Email', value: 'jhomignacio08@gmail.com' },
             { label: 'Languages', value: 'English, Filipino' },
           ],
           skills:[
-            {label:'HTML',rate:'85'},
-            {label:'CSS',rate:'85'},
+            {label:'HTML',rate:'90'},
+            {label:'CSS',rate:'90'},
             {label:'PHP',rate:'85'},
             {label:'JAVASCRIPT',rate:'85'},
             {label:'WORDPRESS',rate:'85'},
-            {label:'LARAVEL',rate:'80'},
-            {label:'VUEJS',rate:'75'},
-            {label:'SHOPIFY',rate:'80'},
+            {label:'LARAVEL',rate:'85'},
+            {label:'VUEJS',rate:'85'},
+            {label:'SHOPIFY',rate:'85'},
           ],
           cards:[
             {label1:'Years of Experience in', label2:'WORDPRESS',experience:'5'},
@@ -375,7 +376,7 @@
           hoveredIndex: null,
           isHovered: false,
           btn_toggle:false,
-          darkmode:false,
+          darkmode:true,
           darkmode_icon:true,
           progressbarCalled:false,
       },
@@ -385,7 +386,7 @@
       methods:{
         OpenCV(){
           window.open(
-            'https://drive.google.com/file/d/185bpf0FVcaux0ThuSs36cigBfuTfPgdk/view',
+            'https://drive.google.com/file/d/1WoQofsLq5_H73na-tDO7Y911dFGpHaz5/view',
             '_blank'
           );
         },
