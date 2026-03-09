@@ -17,20 +17,75 @@
 <body>
   <div id="app">
     <div :class="`${darkmode ? 'dark' : 'light'}`">
-      <section class="navigations">
-          <div  @click="Darkmode()" class="fixed top-0 right-10 md:right-0  flex flex-col text-dark p-4 z-20 h-auto min-h-0" id="dl" v-if="darkmode_icon">
+ <section class="navigations">
+
+  <!-- Dark Mode Toggle -->
+   <div  @click="Darkmode()" class="fixed top-0 right-10 md:right-0  flex flex-col text-dark p-4 z-20 h-auto min-h-0" id="dl" v-if="darkmode_icon">
             <i :class="`fa-regular ${darkmode ? 'fa-lightbulb' : 'fa-moon'} dark-or-light-mode rounded border border-black p-3`"></i>
             <!-- <i class="fa-solid fa-lightbulb dark-or-light-mode"></i> -->
           </div>
-          <div class="fixed top-0 right-10 md:right-0  h-full flex flex-col justify-center items-center  text-dark p-4 z-1 " id="mobile-nav">
-              <ul class="nav-menu">
-                <li v-for="(item, index) in menuItems" :key="index" @mouseover="Toggle(item,menuItems)" @mouseout="item.hovered = false" :class="`${current_page === item.page ? 'active' : ''} flex items-center justify-center mb-4 ${item.hovered ? 'btn-hovered' : ''} ${item.hovered ? 'bg-yellow' : 'bg-normal'}`"   v-on:click="Page(item)">
-                  <span :class="{ 'show': item.hovered }" class="hidden">{{ item.label }}</span>
-                  <i :class="`fa-solid ${item.icon} fa-lg ${item.hovered ? '' : ''}`"></i>
-                </li>
-              </ul>
-          </div>
-      </section>
+
+
+
+  <!-- Desktop Sidebar Navigation -->
+  <div
+    class="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col items-center z-30"
+    id="desktop-nav"
+  >
+    <ul class="space-y-4">
+
+      <li
+        v-for="(item, index) in menuItems"
+        :key="index"
+        @mouseover="Toggle(item,menuItems)"
+        @mouseout="item.hovered = false"
+        @click="Page(item)"
+        class="group relative flex items-center justify-center w-12 h-12 rounded-full shadow-md cursor-pointer transition
+        hover:scale-110"
+        :class="current_page === item.page ? 'bg-yellow-400 text-white' : 'bg-white'"
+      >
+
+        <!-- Tooltip -->
+        <span
+          class="absolute right-14 bg-black text-white text-xs px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap"
+        >
+          {{ item.label }}
+        </span>
+
+        <i :class="`fa-solid ${item.icon}`"></i>
+
+      </li>
+
+    </ul>
+  </div>
+
+
+  <!-- Mobile Bottom Navigation -->
+  <div
+    class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t shadow-lg z-40"
+  >
+    <ul class="flex justify-around items-center py-3">
+
+      <li
+        v-for="(item, index) in menuItems"
+        :key="index"
+        @click="Page(item)"
+        class="flex flex-col items-center text-xs cursor-pointer transition"
+        :class="current_page === item.page ? 'text-yellow-500' : 'text-gray-500'"
+      >
+
+        <i :class="`fa-solid ${item.icon} text-lg`"></i>
+
+        <span class="mt-1">
+          {{ item.label }}
+        </span>
+
+      </li>
+
+    </ul>
+  </div>
+
+</section>
       <!-- Home page -->
    
       
@@ -56,7 +111,7 @@
                     </defs>
                 <path fill="url(#sw-gradient)" d="M14.8,-20.6C20.8,-16,28.3,-13.8,32.8,-8.6C37.4,-3.4,38.9,4.9,35.4,10.2C31.9,15.6,23.4,18.1,16.7,23.8C9.9,29.5,5,38.4,-0.5,39.1C-5.9,39.7,-11.8,32.1,-19.7,26.7C-27.5,21.4,-37.2,18.3,-38.4,12.9C-39.6,7.5,-32.1,-0.3,-27.8,-7.6C-23.4,-14.9,-22.1,-21.8,-18,-26.9C-13.9,-32.1,-6.9,-35.5,-1.3,-33.8C4.4,-32,8.8,-25.1,14.8,-20.6Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="0" style="transition: 0.3s;" stroke="url(#sw-gradient)"></path>
               </svg>
-                  <img src="assets/images/profileimage.png" alt="" class="profile-md absolute" style="top:0;">     
+                  <img src="assets/images/jhomel.png" alt="" class="profile-md absolute" style="top:0;">     
                 </div>
             </div>
         </section>
@@ -115,7 +170,19 @@
                   <li class="pt-5">
                     <div class="__description">
                       <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
-                      <div class="status mr-1 rounded-full">September 2022 to Present 2023</div>
+                      <div class="status mr-1 rounded-full">August 2023 to August 2025</div>
+                      <h1>Online Marketing Gurus ( OMG ) </h1>
+                      <p>Create and Develop WordPress Websites from scratch.</p>
+                      <p>DNS/Hosting Management</p>
+                      <p>Create and Develop Shopify Stores from scratch.</p>
+                      <p>Create and develop WP Plugins.</p>
+                      <p>Gravity Forms integration with different CMS</p>
+                      <p>Implement SEO</p>
+                  </li>
+                  <li class="pt-5">
+                    <div class="__description">
+                      <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
+                      <div class="status mr-1 rounded-full">October 2021 to July 2023</div>
                       <h1>Netseek Pty LTD / WordPress Developer</h1>
                       <p>Create and Develop WordPress Websites from scratch.</p>
                       <p>Developed WP Comparison Plugin.</p>
@@ -125,7 +192,7 @@
                   <li class="pt-5">
                     <div class="__description">
                       <div class="__icon"><i class="fa-solid fa-briefcase"></i><span class="__line"></span></div>
-                      <div class="status mr-1 rounded-full">March 2023 - September 2023</div>
+                      <div class="status mr-1 rounded-full">March 2023 - May 2024</div>
                       <h1>Purplebug Inc. - WordPress Developer / WordPress Consultant</h1>
                       <p>Create and Develop WordPress Websites from scratch.</p>
                       <p>Create and Develop Shopify Websites from scratch.</p>
@@ -281,40 +348,90 @@
         </div>
         </div>
       </transition>
-      <transition v-if="modal_portfolio">
-        <div id="modal_portfolio">
-        <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-          <div class="fixed inset-0 z-10 overflow-y-auto">
-            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0" id="project-modal">
-              <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full w-80">
-                <!-- <div class="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"> -->
-                  <button type="button" class=" absolute top-5 right-5 inline-flex w-full justify-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm  sm:ml-3 sm:w-auto" @click="CloseprojectModal()"><i class="fa-sharp fa-solid fa-xmark fa-lg" style="color:#333;"></i></button>
-                <!-- </div> -->
-                <div class="bg-white" >
-                  <div class="title p-5">{{active_project.label}}</div>
-                  <div class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-4 lg:mt-5 gap-3rem p-5 ">
-                      <div class="col">
-                        <ul>
-                          <li><i class="fa-solid fa-file-lines"></i>Framework : {{active_project.framework}}</li>
-                          <li><i class="fa-solid fa-code"></i>Languages : {{active_project.language}}</li>
-                        </ul>
-                      </div>
-                      <div class="col">
-                        <ul>
-                          <li><i class="fa-solid fa-user"></i> Company: {{active_project.client}}</li>
-                          <li><i class="fa-solid fa-link"></i><a :href="`${active_project.url}`" target="_blank">{{active_project.url}}</a></li>
-                        </ul>
-                      </div>
-                  </div>
-                  <img :src="`assets/images/portfolio/${active_project.img}`" alt="" class="p-5">
-                </div>
-              </div>
+    <transition
+      enter-active-class="transition ease-out duration-300"
+      enter-from-class="opacity-0 scale-95"
+      enter-to-class="opacity-100 scale-100"
+      leave-active-class="transition ease-in duration-200"
+      leave-from-class="opacity-100 scale-100"
+      leave-to-class="opacity-0 scale-95"
+      v-if="modal_portfolio"
+    >
+    <div id="modal_portfolio">
+
+    <div class="fixed inset-0 z-50 flex items-center justify-center p-4">
+
+      <!-- Backdrop -->
+      <div class="fixed inset-0 bg-black/40 backdrop-blur-sm"></div>
+
+      <!-- Modal -->
+      <div class="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden">
+
+        <!-- Close Button -->
+        <button
+          class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition"
+          @click="CloseprojectModal()"
+        >
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+
+        <!-- Header -->
+        <div class="px-8 pt-8 pb-4 border-b">
+          <h2 class="text-2xl font-semibold text-gray-800">
+            {{active_project.label}}
+          </h2>
+        </div>
+
+        <!-- Content -->
+        <div class="p-8 grid lg:grid-cols-2 gap-8">
+
+          <!-- Details -->
+          <div class="space-y-4 text-gray-600">
+
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-file-lines text-gray-400"></i>
+              <span><strong>Framework:</strong> {{active_project.framework}}</span>
             </div>
+
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-code text-gray-400"></i>
+              <span><strong>Languages:</strong> {{active_project.language}}</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-user text-gray-400"></i>
+              <span><strong>Company:</strong> {{active_project.client}}</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-link text-gray-400"></i>
+              <a
+                :href="`${active_project.url}`"
+                target="_blank"
+                class="text-blue-600 hover:underline"
+              >
+                Visit Website
+              </a>
+            </div>
+
           </div>
+
+          <!-- Image -->
+          <div class="flex items-center justify-center">
+            <img
+              :src="`assets/images/portfolio/${active_project.img}`"
+              class="rounded-xl shadow-md border"
+            >
+          </div>
+
         </div>
-        </div>
-      </transition>
+
+      </div>
+
+    </div>
+
+    </div>
+    </transition>
     </div>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
@@ -356,27 +473,64 @@
           ],
           cards:[
             {label1:'Years of Experience in', label2:'WORDPRESS',experience:'5'},
+            {label1:'Years of Experience in', label2:'Shopify',experience:'3'},
             {label1:'Years of Experience in', label2:'LARAVEL',experience:'2'},
-            {label1:'Years of Experience in', label2:'VUEJS',experience:'1'},
-            {label1:'Projects', label2:'',experience:'100'},
+            {label1:'Years of Experience in', label2:'VUEJS',experience:'2'},
+            {label1:'Projects', label2:'',experience:'300'},
           
           ],
-          projects:[
-            {label:'WordPress Comparison Plugin', url:'https://wpcomparisonplugin.com',framework:'WordPress',language:'Php , Css , Jquery ,Zapier, OPENAI', client:'Netseek',img:'wpcomparison.png',hovered:true},
-            {label:'Tea & Coffee Depot', url:'https://teaandcoffeedepot.myshopify.com',framework:'Shopify',language:'liquid ,Php , Css , Jquery', client:'Purplebug Inc.',img:'tnc.png',hovered:true},
-            // {label:'Super MPower', url:'https://supermpower.com',framework:'Laravel',language:'Php , Css , Jquery , REST API ', client:'Super M Power.',img:'mpower.png',hovered:true},
-            {label:'Pinoybuilders', url:'https://pinoybuilders.ph',framework:'WordPress',language:'Php , Css , Jquery , REST API , VueJS', client:'Purplebug Inc.',img:'pinoybuilders.png',hovered:true},
-            {label:'Google Analytics API Plugin', url:'#N/A',framework:'WordPress',language:'Php , Css , Jquery , REST API , VueJS', client:'Purplebug Inc.',img:'google.png',hovered:true},
-            {label:'Lead Origin', url:'https://leadorigin.com',framework:'WordPress',language:'Php , Css , Jquery ', client:'IFormat Logic',img:'leadorigin.png',hovered:true},
-            {label:'Libby Banks', url:'https://libbybanks.com',framework:'WordPress',language:'Php , Css , Jquery ', client:'IFormat Logic',img:'libbybanks.png',hovered:true},
-            {label:'Mirex Marketing', url:'https://www.mirexmarketing.com',framework:'WordPress',language:'Php , Css , Jquery ', client:'IFormat Logic',img:'mirex.png',hovered:true},
-            {label:'Southern Crossings', url:'https://southern-crossings.com',framework:'WordPress',language:'Php , Css , Jquery ', client:'Netseek',img:'sc.png',hovered:true},
-            {label:'Angel Lucci', url:'https://angeluccijewelry.com',framework:'Shopify',language:'Liquid, Php , Css , Jquery , VueJS', client:'IFormat Logic',img:'angelluccy.png',hovered:true},
-          ],
+      projects:[
+        
+{label:'No Limits Removalists', url:'https://nolimitsremovalists.com.au/',framework:'WordPress',language:'Php , Css , Javascript', client:'Online Marketing Gurus',img:'nolimits.jpg',hovered:true},
+
+{label:'Lyft Money', url:'https://lyftmoney.com.au/',framework:'WordPress',language:'Php , Css , Javascript', client:'Online Marketing Gurus',img:'lyftmoney.jpg',hovered:true},
+
+{label:'Rivergum Homes', url:'https://rivergumhomes.com.au/',framework:'WordPress',language:'Php , Css , Javascript', client:'Online Marketing Gurus',img:'rivergumhomes.jpg',hovered:true},
+
+{label:'Instant Brands', url:'https://instantbrands.com.au/',framework:'WordPress',language:'Php , Css , Javascript', client:'Online Marketing Gurus',img:'instantbrand.jpg',hovered:true},
+
+{label:'Hydro Headwear', url:'https://www.hydroheadwear.com/',framework:'Shopify',language:'Liquid , Css , Javascript', client:'Online Marketing Gurus',img:'hydroheadwear.jpg',hovered:true},
+
+{label:'EST10 Recruitment', url:'https://est10.com.au/',framework:'WordPress',language:'Php , Css , Javascript', client:'Online Marketing Gurus',img:'est10.jpg',hovered:true},
+
+{label:'Active Air', url:'https://activeair.com.au/',framework:'WordPress',language:'Php , Css , Javascript', client:'Online Marketing Gurus',img:'activeair.jpg',hovered:true},
+
+{label:'Branded Tailor', url:'https://zt.brandedtailor.com/',framework:'Shopify',language:'Liquid , Css , Javascript', client:'Online Marketing Gurus',img:'brandedtailor.jpg',hovered:true},
+
+{label:'Smoke Payments', url:'https://smokepayments.com/',framework:'WordPress',language:'Php , Css , Javascript', client:'Online Marketing Gurus',img:'smokepayments.jpg',hovered:true},
+
+{label:'ZT Baseball', url:'https://www.ztbaseball.com',framework:'Shopify',language:'Liquid , Css , Javascript', client:'Online Marketing Gurus',img:'ztbaseball.jpg',hovered:true},
+
+{label:'Nappy Co', url:'https://nappy.co/',framework:'Laravel',language:'Php , Css , Javascript', client:'Online Marketing Gurus',img:'nappy.jpg',hovered:true},
+
+{label:'Dahlia & Friends', url:'https://dahliaandfriends.com/',framework:'Shopify',language:'Liquid , Css , Javascript', client:'Online Marketing Gurus',img:'dahlia.jpg',hovered:true},
+
+{label:'Maxx Builders', url:'https://www.maxxbuilders.com/',framework:'WordPress',language:'Php , Css , Javascript', client:'Online Marketing Gurus',img:'maxbuilders.jpg',hovered:true},
+
+{label:'Beds R Us', url:'https://bedsrus.com.au/',framework:'Shopify',language:'Liquid , Css , Javascript', client:'Online Marketing Gurus',img:'bedsrus.jpg',hovered:true},
+{label:'WordPress Comparison Plugin', url:'https://wpcomparisonplugin.com',framework:'WordPress',language:'Php , Css , Jquery ,Zapier, OPENAI', client:'Netseek',img:'wpcomparison.png',hovered:true},
+
+{label:'Tea & Coffee Depot', url:'https://teaandcoffeedepot.myshopify.com',framework:'Shopify',language:'Liquid ,Php , Css , Jquery', client:'Purplebug Inc.',img:'tnc.png',hovered:true},
+
+{label:'Pinoybuilders', url:'https://pinoybuilders.ph',framework:'WordPress',language:'Php , Css , Jquery , REST API , VueJS', client:'Purplebug Inc.',img:'pinoybuilders.png',hovered:true},
+
+{label:'Google Analytics API Plugin', url:'#N/A',framework:'WordPress',language:'Php , Css , Jquery , REST API , VueJS', client:'Purplebug Inc.',img:'google.png',hovered:true},
+
+{label:'Lead Origin', url:'https://leadorigin.com',framework:'WordPress',language:'Php , Css , Jquery', client:'IFormat Logic',img:'leadorigin.png',hovered:true},
+
+{label:'Libby Banks', url:'https://libbybanks.com',framework:'WordPress',language:'Php , Css , Jquery', client:'IFormat Logic',img:'libbybanks.png',hovered:true},
+
+{label:'Mirex Marketing', url:'https://www.mirexmarketing.com',framework:'WordPress',language:'Php , Css , Jquery', client:'IFormat Logic',img:'mirex.png',hovered:true},
+
+{label:'Southern Crossings', url:'https://southern-crossings.com',framework:'WordPress',language:'Php , Css , Jquery', client:'Netseek',img:'sc.png',hovered:true},
+
+{label:'Angel Lucci', url:'https://angeluccijewelry.com',framework:'Shopify',language:'Liquid, Php , Css , Jquery , VueJS', client:'IFormat Logic',img:'angelluccy.png',hovered:true},
+
+],
           hoveredIndex: null,
           isHovered: false,
           btn_toggle:false,
-          darkmode:true,
+          darkmode:false,
           darkmode_icon:true,
           progressbarCalled:false,
       },
